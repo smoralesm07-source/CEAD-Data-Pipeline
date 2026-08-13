@@ -5,8 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # GitHub usa UTC. Día 5 de cada mes, 12:20 UTC.
-    - cron: '20 12 5 * *'
+    # GitHub usa UTC. Revisión semanal: lunes 12:20 UTC.
+    - cron: '20 12 * * 1'
 
 permissions:
   contents: write
@@ -54,6 +54,13 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python run.py
 
+      - name: Publicar controles y registro de fuentes v0.3
+        shell: bash
+        run: |
+          mkdir -p data/processed
+          cp config/cead_2026_official_controls.json data/processed/cead_2026_official_controls.json
+          cp config/source_registry_v03.json data/processed/source_registry_v03.json
+
       - name: Publicar snapshot técnico
         shell: bash
         run: |
@@ -70,5 +77,5 @@ jobs:
           rm -rf data public
           cp -R "$TMP"/* .
           git add data public
-          git commit -m "cead: snapshot mensual $(date -u +%F)" || true
+          git commit -m "cead: snapshot semanal $(date -u +%F)" || true
           git push origin HEAD:data --force
