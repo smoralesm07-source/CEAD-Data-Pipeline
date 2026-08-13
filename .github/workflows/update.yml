@@ -5,7 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '20 11 * * *'
+    # GitHub usa UTC. Día 5 de cada mes, 12:20 UTC.
+    - cron: '20 12 5 * *'
 
 permissions:
   contents: write
@@ -28,10 +29,29 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Restaurar estado técnico anterior
+        shell: bash
+        run: |
+          git fetch origin data || true
+          mkdir -p data/processed data/history
+          if git show-ref --verify --quiet refs/remotes/origin/data; then
+            git show origin/data:data/processed/manifest.json > data/previous_manifest.json 2>/dev/null || true
+            for f in data/processed/cead_direct_monthly.parquet data/processed/cead_direct_annual_ytd.parquet; do
+              git show "origin/data:$f" > "$f" 2>/dev/null || rm -f "$f"
+            done
+            git ls-tree -r --name-only origin/data data/history | while read -r f; do
+              [ -z "$f" ] && continue
+              mkdir -p "$(dirname "$f")"
+              git show "origin/data:$f" > "$f" || true
+            done
+          fi
+
       - name: Ejecutar pruebas
         run: pytest -q
 
       - name: Descargar, validar y normalizar CEAD
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python run.py
 
       - name: Publicar snapshot técnico
@@ -43,11 +63,12 @@ jobs:
           mkdir -p "$TMP/data"
           cp -R data/processed "$TMP/data/"
           cp -R data/evidence "$TMP/data/"
+          cp -R data/history "$TMP/data/"
           cp -R public "$TMP/"
           git checkout --orphan data-tmp
           git rm -rf . >/dev/null 2>&1 || true
           rm -rf data public
           cp -R "$TMP"/* .
           git add data public
-          git commit -m "cead: snapshot $(date -u +%F)"
+          git commit -m "cead: snapshot mensual $(date -u +%F)" || true
           git push origin HEAD:data --force
