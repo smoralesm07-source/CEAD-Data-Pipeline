@@ -1,0 +1,38 @@
+{
+  "version": "0.3.0",
+  "sources": [
+    {
+      "source_id": "cead_direct_post",
+      "tier": "primary_direct",
+      "role": "backbone_preferred",
+      "update_target": "monthly_or_better",
+      "status_rule": "promote_only_if_probe_and_QA_pass"
+    },
+    {
+      "source_id": "cead_bastianolea_bridge",
+      "tier": "mirror_of_primary",
+      "role": "historical_backbone",
+      "known_coverage_through": "2025-12"
+    },
+    {
+      "source_id": "cead_twun_candidate",
+      "tier": "candidate_mirror",
+      "role": "2026_ytd_candidate",
+      "coverage_claim": "345 communes; 2005-2026; 8 crime families; 2026 partial",
+      "acceptance_rule": "Require reproducible downloadable artifact plus overlap QA against CEAD 2025 before promotion",
+      "consumer_rule": "Never splice annual YTD into the monthly CEAD historical series"
+    },
+    {
+      "source_id": "stop_carabineros",
+      "tier": "auxiliary_leading_indicator",
+      "role": "fresh_operational_signal",
+      "consumer_rule": "Keep separate from CEAD; never use STOP to fill CEAD missing periods"
+    },
+    {
+      "source_id": "cead_official_t1_2026_publication",
+      "tier": "official_secondary_control",
+      "role": "2026_validation_control",
+      "period": "2026-Q1"
+    }
+  ]
+}
