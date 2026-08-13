@@ -1,0 +1,46 @@
+{
+  "version": "0.3.2",
+  "source_id": "cead_twun_family_snapshot",
+  "source_page": "https://twun.cl/seguridad/radiografia",
+  "artifact_sha256": "f033ab74b13069e5b703f682f35c2537e9fbb4e0bc878e38af7dec05fafc8969",
+  "artifact_bytes": 443030,
+  "artifact_rows": 3105,
+  "communes": 345,
+  "regions": 16,
+  "crime_families": 8,
+  "years": "2005-2026",
+  "period_2026": "2026-Q1",
+  "period_end": "2026-03-31",
+  "period_completeness": "ytd_q1",
+  "total_cases_2025": 1975872,
+  "total_cases_2026_q1": 474597,
+  "structural_qa": {
+    "duplicate_pairs": 0,
+    "reconciliation_checks": 7590,
+    "reconciliation_failures": 0,
+    "numeric_nulls": 0,
+    "negative_cells": 0,
+    "non_integer_cells": 0
+  },
+  "overlap_2025": {
+    "fully_comparable_families": 5,
+    "national_exact_matches": 5,
+    "regional_cells_checked": 80,
+    "regional_exact_matches": 80,
+    "property_candidate_total": 312631,
+    "property_bridge_total": 311593.039,
+    "property_difference_pct": 0.3320083421,
+    "property_difference_region": "Metropolitana de Santiago",
+    "incomplete_bridge_families": ["Incivilidades", "Otros delitos o faltas"]
+  },
+  "official_2026_controls": {
+    "regional_drugs_checks": 3,
+    "exact_matches": 3,
+    "Tarapaca": 202,
+    "Atacama": 159,
+    "Magallanes": 58
+  },
+  "quality_status": "validated_mirror_snapshot",
+  "promotion_decision": "accepted",
+  "consumer_rule": "2026 remains a separate family-level Q1 YTD snapshot; never splice into the monthly CEAD series; missing_never_zero."
+}
