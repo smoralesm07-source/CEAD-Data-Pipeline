@@ -1,0 +1,53 @@
+name: CEAD Data Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '20 11 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cead-data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar pruebas
+        run: pytest -q
+
+      - name: Descargar, validar y normalizar CEAD
+        run: python run.py
+
+      - name: Publicar snapshot técnico
+        shell: bash
+        run: |
+          git config user.name "cead-data-bot"
+          git config user.email "cead-data-bot@users.noreply.github.com"
+          TMP=$(mktemp -d)
+          mkdir -p "$TMP/data"
+          cp -R data/processed "$TMP/data/"
+          cp -R data/evidence "$TMP/data/"
+          cp -R public "$TMP/"
+          git checkout --orphan data-tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          rm -rf data public
+          cp -R "$TMP"/* .
+          git add data public
+          git commit -m "cead: snapshot $(date -u +%F)"
+          git push origin HEAD:data --force
