@@ -36,7 +36,7 @@ def test_freshness_status():
     assert _freshness("2025-12", now)["status"] == "stale"
 
 
-def test_workflow_is_monthly():
+def test_workflow_is_weekly():
     text = Path(".github/workflows/update.yml").read_text(encoding="utf-8")
-    assert "20 12 5 * *" in text
-    assert "20 11 * * *" not in text
+    assert "20 12 * * 1" in text
+    assert "20 12 5 * *" not in text
