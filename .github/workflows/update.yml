@@ -54,6 +54,9 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python run.py
 
+      - name: Generar referencia CEAD 2025 para QA de mirrors
+        run: python scripts/reference_2025.py
+
       - name: Publicar controles y registro de fuentes v0.3
         shell: bash
         run: |
