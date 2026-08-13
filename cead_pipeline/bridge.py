@@ -35,14 +35,14 @@ def fetch_snapshot(timeout: int = 90) -> tuple[bytes, dict]:
     meta = {"repo": UPSTREAM_REPO, "path": UPSTREAM_PATH, "source_id": "cead_community_bridge", "ultimate_source_id": "cead_estadisticas_delictuales", "source_tier": "mirror_of_primary", "license_upstream": "GPL-3.0"}
     url = UPSTREAM_RAW
     try:
-        r = requests.get(UPSTREAM_API, headers={"Accept": "application/vnd.github+json", "User-Agent": "CEAD-Data-Pipeline/0.1"}, timeout=20)
+        r = requests.get(UPSTREAM_API, headers={"Accept": "application/vnd.github+json", "User-Agent": "CEAD-Data-Pipeline/0.2"}, timeout=20)
         if r.ok:
             doc = r.json()
             url = doc.get("download_url") or url
             meta.update({"upstream_blob_sha": doc.get("sha"), "upstream_size": doc.get("size")})
     except Exception:
         pass
-    r = requests.get(url, headers={"User-Agent": "CEAD-Data-Pipeline/0.1"}, timeout=timeout)
+    r = requests.get(url, headers={"User-Agent": "CEAD-Data-Pipeline/0.2"}, timeout=timeout)
     r.raise_for_status()
     content = r.content
     meta.update({"download_url": url, "retrieved_at": datetime.now(timezone.utc).isoformat(), "bytes": len(content), "content_sha256": hashlib.sha256(content).hexdigest()})
