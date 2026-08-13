@@ -49,12 +49,24 @@ def norm(value: object) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text).strip()
 
 
+def norm_region(value: object) -> str:
+    text = norm(value)
+    text = re.sub(r"^region\s+(de\s+la\s+|del\s+|de\s+)?", "", text).strip()
+    text = text.replace("gral ", "general ")
+    return text
+
+
 def hash_lines(lines: list[str]) -> str:
     return hashlib.sha256("".join(lines).encode("utf-8")).hexdigest()
 
 
-def vector_hash(grouped: pd.DataFrame) -> str:
+def commune_vector_hash(grouped: pd.DataFrame) -> str:
     rows = sorted((norm(r.commune_name), int(round(float(r.value)))) for r in grouped.itertuples(index=False))
+    return hash_lines([f"{name}|{value}\n" for name, value in rows])
+
+
+def region_vector_hash(grouped: pd.DataFrame) -> str:
+    rows = sorted((norm_region(r.region_name), int(round(float(r.value)))) for r in grouped.itertuples(index=False))
     return hash_lines([f"{name}|{value}\n" for name, value in rows])
 
 
@@ -71,13 +83,20 @@ def main() -> None:
     family_reference = {}
     for family, categories in FAMILY_MAP.items():
         part = d[d["crime_category"].isin(categories)].copy()
-        grouped = part.groupby(["commune_name"], dropna=False)["value"].sum(min_count=1).reset_index()
+        by_commune = part.groupby(["commune_name"], dropna=False)["value"].sum(min_count=1).reset_index()
+        by_region = part.groupby(["region_name"], dropna=False)["value"].sum(min_count=1).reset_index()
         family_reference[family] = {
             "reference_status": FAMILY_REFERENCE_STATUS[family],
             "categories_used": categories,
-            "communes": int(grouped["commune_name"].nunique()),
-            "national_total": float(grouped["value"].sum()),
-            "commune_vector_sha256": vector_hash(grouped),
+            "communes": int(by_commune["commune_name"].nunique()),
+            "regions": int(by_region["region_name"].nunique()),
+            "national_total": float(by_commune["value"].sum()),
+            "commune_vector_sha256": commune_vector_hash(by_commune),
+            "region_vector_sha256": region_vector_hash(by_region),
+            "region_totals": [
+                {"region_name": str(r.region_name), "region_norm": norm_region(r.region_name), "value": float(r.value)}
+                for r in by_region.sort_values("region_name").itertuples(index=False)
+            ],
         }
 
     payload = {
@@ -98,7 +117,7 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({"year": 2025, "communes": payload["communes"], "commune_name_set_sha256": payload["commune_name_set_sha256"], "family_reference": family_reference}, ensure_ascii=False))
+    print(json.dumps({"year": 2025, "communes": payload["communes"], "family_reference": family_reference}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
