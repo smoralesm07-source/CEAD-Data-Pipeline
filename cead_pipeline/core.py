@@ -10,8 +10,8 @@ import pandas as pd
 from .bridge import fetch_snapshot, normalize, annualize
 from .primary import collect_direct_year, probe
 
-VERSION = "0.2.0"
-MONTHLY_CRON_UTC = "20 12 5 * *"
+VERSION = "0.3.0"
+WEEKLY_CRON_UTC = "20 12 * * 1"
 
 
 def _load_json(path: Path, default):
@@ -77,6 +77,8 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
 
     now = datetime.now(timezone.utc)
     previous = _load_json(previous_path, {})
+    official_controls = _load_json(root / "config" / "cead_2026_official_controls.json", {})
+    source_registry = _load_json(root / "config" / "source_registry_v03.json", {})
 
     content, meta = fetch_snapshot()
     monthly, stats = normalize(content, start_year)
@@ -127,18 +129,31 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
         "active_backbone": canonical_backbone,
         "current_monthly_backbone": current_backbone,
         "refresh_policy": {
-            "cadence": "monthly",
-            "scheduled_day": 5,
-            "cron_utc": MONTHLY_CRON_UTC,
+            "cadence": "weekly",
+            "cron_utc": WEEKLY_CRON_UTC,
             "manual_dispatch": True,
             "run_event": os.getenv("GITHUB_EVENT_NAME", "local"),
-            "rule": "QA before publish; missing_never_zero; partial direct batches never replace last good data."
+            "rule": "QA before publish; missing_never_zero; partial sources never replace last good comparable CEAD data."
         },
         "source_change": {"changed_vs_previous": changed, "current_bridge_sha256": bridge_hash, "previous_bridge_sha256": previous_bridge_hash, "current_direct_latest_period": direct_latest, "previous_direct_latest_period": previous_direct_latest},
         "freshness": freshness,
         "primary_probe": primary,
         "direct_current_year": direct_meta,
         "bridge_snapshot": {**meta, **stats},
+        "official_2026_controls": {
+            "available": bool(official_controls),
+            "source_id": official_controls.get("source_id"),
+            "period": official_controls.get("period"),
+            "period_end": official_controls.get("period_end"),
+            "published_at": official_controls.get("published_at"),
+            "artifact": "data/processed/cead_2026_official_controls.json",
+            "use": "validation_control_only"
+        },
+        "source_registry": {
+            "available": bool(source_registry),
+            "version": source_registry.get("version"),
+            "artifact": "data/processed/source_registry_v03.json"
+        },
         "coverage": {**stats, "annual_rows": int(len(annual)), "best_monthly_rows": int(len(best_monthly)), "best_latest_period": best_latest, "direct_monthly_rows": int(len(direct))},
         "rule": "missing_never_zero"
     }
@@ -152,9 +167,9 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
     evidence_rows = [meta, primary, {"source_id": "cead_direct_collection", **direct_meta, "retrieved_at": now.isoformat()}]
     (ev / "source_evidence.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in evidence_rows), encoding="utf-8")
 
-    history_entry = {"version": VERSION, "run_month": now.strftime("%Y-%m"), "generated_at": now.isoformat(), "run_event": os.getenv("GITHUB_EVENT_NAME", "local"), "changed_vs_previous": changed, "bridge_sha256": bridge_hash, "bridge_max_date": stats.get("max_date"), "best_latest_period": best_latest, "freshness": freshness, "primary_probe_ok": bool(primary.get("ok")), "direct_usable": bool(direct_meta.get("usable")), "coverage": manifest["coverage"]}
-    (history / f"{now.strftime('%Y-%m')}.json").write_text(json.dumps(history_entry, ensure_ascii=False, indent=2), encoding="utf-8")
+    history_entry = {"version": VERSION, "run_date": now.strftime("%Y-%m-%d"), "generated_at": now.isoformat(), "run_event": os.getenv("GITHUB_EVENT_NAME", "local"), "changed_vs_previous": changed, "bridge_sha256": bridge_hash, "bridge_max_date": stats.get("max_date"), "best_latest_period": best_latest, "freshness": freshness, "primary_probe_ok": bool(primary.get("ok")), "direct_usable": bool(direct_meta.get("usable")), "official_2026_controls": manifest["official_2026_controls"], "coverage": manifest["coverage"]}
+    (history / f"{now.strftime('%Y-%m-%d')}.json").write_text(json.dumps(history_entry, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    (pub / "data.json").write_text(json.dumps({"version": VERSION, "generated_at": manifest["generated_at"], "coverage": manifest["coverage"], "freshness": freshness, "source_change": manifest["source_change"]}, ensure_ascii=False, indent=2), encoding="utf-8")
-    (pub / "index.html").write_text("<h1>CEAD Data Pipeline v0.2</h1><p>Dataset técnico comunal independiente del análisis AML. Actualización mensual programada.</p>", encoding="utf-8")
+    (pub / "data.json").write_text(json.dumps({"version": VERSION, "generated_at": manifest["generated_at"], "coverage": manifest["coverage"], "freshness": freshness, "official_2026_controls": manifest["official_2026_controls"], "source_change": manifest["source_change"]}, ensure_ascii=False, indent=2), encoding="utf-8")
+    (pub / "index.html").write_text("<h1>CEAD Data Pipeline v0.3</h1><p>Dataset técnico comunal independiente del análisis AML. Revisión semanal y controles oficiales 2026 separados del histórico comparable.</p>", encoding="utf-8")
     return manifest
