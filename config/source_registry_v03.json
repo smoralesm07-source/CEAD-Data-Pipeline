@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.1",
   "sources": [
     {
       "source_id": "cead_direct_post",
@@ -15,12 +15,14 @@
       "known_coverage_through": "2025-12"
     },
     {
-      "source_id": "cead_twun_candidate",
-      "tier": "candidate_mirror",
-      "role": "2026_ytd_candidate",
-      "coverage_claim": "345 communes; 2005-2026; 8 crime families; 2026 partial",
-      "acceptance_rule": "Require reproducible downloadable artifact plus overlap QA against CEAD 2025 before promotion",
-      "consumer_rule": "Never splice annual YTD into the monthly CEAD historical series"
+      "source_id": "cead_twun_2026",
+      "tier": "validated_mirror_of_primary",
+      "role": "2026_ytd_validated",
+      "coverage_validated": "345 communes; 8 CEAD families; annual series 2005-2026; 2026 partial",
+      "validated_at": "2026-08-13",
+      "validation_rule": "Artifact schema passed and six reconstructable CEAD families passed historical overlap gates for 2020-2025: territorial join >=99%, exact equality >=95%, relative aggregate difference <=1%.",
+      "period_completeness": "ytd_unknown_cutoff",
+      "consumer_rule": "Use as a separate annual/YTD 2026 layer. Never splice into the canonical monthly CEAD series and never treat 2026 as a complete year until the exact cutoff is documented."
     },
     {
       "source_id": "stop_carabineros",
