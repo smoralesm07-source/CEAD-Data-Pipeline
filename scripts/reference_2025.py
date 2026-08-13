@@ -49,10 +49,13 @@ def norm(value: object) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text).strip()
 
 
+def hash_lines(lines: list[str]) -> str:
+    return hashlib.sha256("".join(lines).encode("utf-8")).hexdigest()
+
+
 def vector_hash(grouped: pd.DataFrame) -> str:
     rows = sorted((norm(r.commune_name), int(round(float(r.value)))) for r in grouped.itertuples(index=False))
-    text = "".join(f"{name}|{value}\n" for name, value in rows)
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+    return hash_lines([f"{name}|{value}\n" for name, value in rows])
 
 
 def main() -> None:
@@ -63,6 +66,7 @@ def main() -> None:
 
     category = d.groupby("crime_category", dropna=False)["value"].sum(min_count=1).sort_values(ascending=False)
     commune = d.groupby(["commune_code", "commune_name", "region_name"], dropna=False)["value"].sum(min_count=1).reset_index().sort_values(["commune_code"])
+    normalized_names = sorted({norm(x) for x in d["commune_name"].dropna().astype(str)})
 
     family_reference = {}
     for family, categories in FAMILY_MAP.items():
@@ -81,6 +85,7 @@ def main() -> None:
         "source": "data/processed/cead_monthly.parquet",
         "rows": int(len(d)),
         "communes": int(d["commune_code"].nunique()),
+        "commune_name_set_sha256": hash_lines([f"{name}\n" for name in normalized_names]),
         "categories": int(d["crime_category"].nunique()),
         "national_total_raw_categories": float(d["value"].sum()),
         "category_totals": {str(k): float(v) for k, v in category.items()},
@@ -93,7 +98,7 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({"year": 2025, "communes": payload["communes"], "categories": payload["categories"], "family_reference": family_reference}, ensure_ascii=False))
+    print(json.dumps({"year": 2025, "communes": payload["communes"], "commune_name_set_sha256": payload["commune_name_set_sha256"], "family_reference": family_reference}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
