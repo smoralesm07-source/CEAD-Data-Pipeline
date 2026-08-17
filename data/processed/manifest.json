@@ -1,0 +1,107 @@
+{
+  "version": "0.3.0",
+  "generated_at": "2026-08-17T13:10:45.388459+00:00",
+  "active_backbone": "mirror_of_primary",
+  "current_monthly_backbone": "mirror_of_primary",
+  "refresh_policy": {
+    "cadence": "weekly",
+    "cron_utc": "20 12 * * 1",
+    "manual_dispatch": true,
+    "run_event": "schedule",
+    "rule": "QA before publish; missing_never_zero; partial sources never replace last good comparable CEAD data."
+  },
+  "source_change": {
+    "changed_vs_previous": false,
+    "current_bridge_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+    "previous_bridge_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+    "current_direct_latest_period": null,
+    "previous_direct_latest_period": null
+  },
+  "freshness": {
+    "latest_period": "2025-12",
+    "months_lag": 8,
+    "status": "stale"
+  },
+  "primary_probe": {
+    "source_id": "cead_direct_post",
+    "endpoint": "https://cead.minsegpublica.gob.cl/wp-content/themes/gobcl-wp-master/data/get_estadisticas_delictuales.php",
+    "retrieved_at": "2026-08-17T13:10:53.496023+00:00",
+    "ok": false,
+    "http_status": 403,
+    "bytes": 27,
+    "response_sha256": "145d990c380068b3a689c515724a582940bcdc0509da9217bf875fd19ebade10",
+    "parsed_rows": 0,
+    "latest_nonzero_period": null,
+    "blocking_message": "Maximum request file upload",
+    "note": "Sonda primaria sin bypass; un bloqueo no se interpreta como ausencia de delitos."
+  },
+  "direct_current_year": {
+    "attempted": false,
+    "usable": false,
+    "cache_reused": false,
+    "reason": "primary_probe_blocked_or_unavailable"
+  },
+  "bridge_snapshot": {
+    "repo": "bastianolea/delincuencia_chile",
+    "path": "datos/procesados/cead_delincuencia_chile.parquet",
+    "source_id": "cead_community_bridge",
+    "ultimate_source_id": "cead_estadisticas_delictuales",
+    "source_tier": "mirror_of_primary",
+    "license_upstream": "GPL-3.0",
+    "upstream_blob_sha": "c2860abf3328e94adaad08b551bba4c6300c497d",
+    "upstream_size": 2232441,
+    "download_url": "https://raw.githubusercontent.com/bastianolea/delincuencia_chile/main/datos/procesados/cead_delincuencia_chile.parquet",
+    "retrieved_at": "2026-08-17T13:10:46.184796+00:00",
+    "bytes": 2232441,
+    "content_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+    "min_date": "2020-01-01",
+    "max_date": "2025-12-01",
+    "communes": 345,
+    "expected_communes": 346,
+    "offenses": 30,
+    "monthly_rows": 745200,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "official_2026_controls": {
+    "available": true,
+    "source_id": "cead_official_t1_2026_publication",
+    "period": "2026-Q1",
+    "period_end": "2026-03-31",
+    "published_at": "2026-05-14",
+    "artifact": "data/processed/cead_2026_official_controls.json",
+    "use": "validation_control_only"
+  },
+  "source_registry": {
+    "available": true,
+    "version": "0.3.1",
+    "artifact": "data/processed/source_registry_v03.json"
+  },
+  "coverage": {
+    "min_date": "2020-01-01",
+    "max_date": "2025-12-01",
+    "communes": 345,
+    "expected_communes": 346,
+    "offenses": 30,
+    "monthly_rows": 745200,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "annual_rows": 62100,
+    "best_monthly_rows": 745200,
+    "best_latest_period": "2025-12",
+    "direct_monthly_rows": 0
+  },
+  "rule": "missing_never_zero"
+}
