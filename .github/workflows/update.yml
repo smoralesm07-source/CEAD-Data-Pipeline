@@ -33,10 +33,15 @@ jobs:
         shell: bash
         run: |
           git fetch origin data || true
-          mkdir -p data/processed data/history
+          mkdir -p data/processed data/history data/evidence
           if git show-ref --verify --quiet refs/remotes/origin/data; then
             git show origin/data:data/processed/manifest.json > data/previous_manifest.json 2>/dev/null || true
-            for f in data/processed/cead_direct_monthly.parquet data/processed/cead_direct_annual_ytd.parquet; do
+            for f in \
+              data/processed/cead_direct_monthly.parquet \
+              data/processed/cead_direct_annual_ytd.parquet \
+              data/processed/cead_document_catalog.json \
+              data/processed/cead_enrichment_manifest.json; do
+              mkdir -p "$(dirname "$f")"
               git show "origin/data:$f" > "$f" 2>/dev/null || rm -f "$f"
             done
             git ls-tree -r --name-only origin/data data/history | while read -r f; do
@@ -49,7 +54,7 @@ jobs:
       - name: Ejecutar pruebas
         run: pytest -q
 
-      - name: Descargar, validar y normalizar CEAD
+      - name: Descargar, validar, normalizar y enriquecer CEAD
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python run.py
@@ -63,6 +68,7 @@ jobs:
           mkdir -p data/processed
           cp config/cead_2026_official_controls.json data/processed/cead_2026_official_controls.json
           cp config/source_registry_v03.json data/processed/source_registry_v03.json
+          cp config/cead_enrichment_v1.json data/processed/cead_enrichment_v1.json
 
       - name: Publicar snapshot técnico
         shell: bash
