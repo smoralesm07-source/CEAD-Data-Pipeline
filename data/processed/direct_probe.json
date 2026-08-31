@@ -1,0 +1,13 @@
+{
+  "source_id": "cead_direct_post",
+  "endpoint": "https://cead.minsegpublica.gob.cl/wp-content/themes/gobcl-wp-master/data/get_estadisticas_delictuales.php",
+  "retrieved_at": "2026-08-31T19:09:50.514482+00:00",
+  "ok": false,
+  "http_status": 403,
+  "bytes": 27,
+  "response_sha256": "145d990c380068b3a689c515724a582940bcdc0509da9217bf875fd19ebade10",
+  "parsed_rows": 0,
+  "latest_nonzero_period": null,
+  "blocking_message": "Maximum request file upload",
+  "note": "Sonda primaria sin bypass; un bloqueo no se interpreta como ausencia de delitos."
+}

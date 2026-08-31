@@ -1,0 +1,45 @@
+{
+  "version": "0.3.0",
+  "generated_at": "2026-08-31T19:09:42.591430+00:00",
+  "coverage": {
+    "min_date": "2020-01-01",
+    "max_date": "2025-12-01",
+    "communes": 345,
+    "expected_communes": 346,
+    "offenses": 30,
+    "monthly_rows": 745200,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "annual_rows": 62100,
+    "best_monthly_rows": 745200,
+    "best_latest_period": "2025-12",
+    "direct_monthly_rows": 0
+  },
+  "freshness": {
+    "latest_period": "2025-12",
+    "months_lag": 8,
+    "status": "stale"
+  },
+  "official_2026_controls": {
+    "available": true,
+    "source_id": "cead_official_t1_2026_publication",
+    "period": "2026-Q1",
+    "period_end": "2026-03-31",
+    "published_at": "2026-05-14",
+    "artifact": "data/processed/cead_2026_official_controls.json",
+    "use": "validation_control_only"
+  },
+  "source_change": {
+    "changed_vs_previous": false,
+    "current_bridge_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+    "previous_bridge_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+    "current_direct_latest_period": null,
+    "previous_direct_latest_period": null
+  }
+}

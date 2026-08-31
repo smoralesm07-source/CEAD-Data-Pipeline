@@ -1,0 +1,122 @@
+[
+  {
+    "crime_category":"Abusos sexuales",
+    "crime_category_norm":"abusos sexuales"
+  },
+  {
+    "crime_category":"Acosos sexuales",
+    "crime_category_norm":"acosos sexuales"
+  },
+  {
+    "crime_category":"Amenaza falta o riña",
+    "crime_category_norm":"amenaza falta o rina"
+  },
+  {
+    "crime_category":"Amenazas",
+    "crime_category_norm":"amenazas"
+  },
+  {
+    "crime_category":"Consumo de alcohol y drogas en la vía pública",
+    "crime_category_norm":"consumo de alcohol y drogas en la via publica"
+  },
+  {
+    "crime_category":"Crímenes y simples delitos ley de armas",
+    "crime_category_norm":"crimenes y simples delitos ley de armas"
+  },
+  {
+    "crime_category":"Daños",
+    "crime_category_norm":"danos"
+  },
+  {
+    "crime_category":"Delitos asociados a armas",
+    "crime_category_norm":"delitos asociados a armas"
+  },
+  {
+    "crime_category":"Delitos asociados a drogas",
+    "crime_category_norm":"delitos asociados a drogas"
+  },
+  {
+    "crime_category":"Desórdenes públicos",
+    "crime_category_norm":"desordenes publicos"
+  },
+  {
+    "crime_category":"Femicidios",
+    "crime_category_norm":"femicidios"
+  },
+  {
+    "crime_category":"Homicidios",
+    "crime_category_norm":"homicidios"
+  },
+  {
+    "crime_category":"Hurtos",
+    "crime_category_norm":"hurtos"
+  },
+  {
+    "crime_category":"Lesiones graves o gravísimas",
+    "crime_category_norm":"lesiones graves o gravisimas"
+  },
+  {
+    "crime_category":"Lesiones leves",
+    "crime_category_norm":"lesiones leves"
+  },
+  {
+    "crime_category":"Lesiones menos graves",
+    "crime_category_norm":"lesiones menos graves"
+  },
+  {
+    "crime_category":"Otros delitos sexuales",
+    "crime_category_norm":"otros delitos sexuales"
+  },
+  {
+    "crime_category":"Otros robos con fuerza en las cosas",
+    "crime_category_norm":"otros robos con fuerza en las cosas"
+  },
+  {
+    "crime_category":"Porte de arma cortante o punzante",
+    "crime_category_norm":"porte de arma cortante o punzante"
+  },
+  {
+    "crime_category":"Receptación",
+    "crime_category_norm":"receptacion"
+  },
+  {
+    "crime_category":"Robo de objetos de o desde vehículo",
+    "crime_category_norm":"robo de objetos de o desde vehiculo"
+  },
+  {
+    "crime_category":"Robo de vehículo motorizado",
+    "crime_category_norm":"robo de vehiculo motorizado"
+  },
+  {
+    "crime_category":"Robo en lugar habitado",
+    "crime_category_norm":"robo en lugar habitado"
+  },
+  {
+    "crime_category":"Robo en lugar no habitado",
+    "crime_category_norm":"robo en lugar no habitado"
+  },
+  {
+    "crime_category":"Robo frustrado",
+    "crime_category_norm":"robo frustrado"
+  },
+  {
+    "crime_category":"Robo por sorpresa",
+    "crime_category_norm":"robo por sorpresa"
+  },
+  {
+    "crime_category":"Robo violento de vehículo motorizado",
+    "crime_category_norm":"robo violento de vehiculo motorizado"
+  },
+  {
+    "crime_category":"Robos con violencia o intimidación",
+    "crime_category_norm":"robos con violencia o intimidacion"
+  },
+  {
+    "crime_category":"Violaciones",
+    "crime_category_norm":"violaciones"
+  },
+  {
+    "crime_category":"Violencia intrafamiliar",
+    "crime_category_norm":"violencia intrafamiliar"
+  }
+]
