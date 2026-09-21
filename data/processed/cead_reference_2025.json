@@ -1,0 +1,2880 @@
+{
+  "year": 2025,
+  "source": "data/processed/cead_monthly.parquet",
+  "rows": 124200,
+  "communes": 345,
+  "commune_name_set_sha256": "148833a5aea59facb60f72ba7562c615f48a461c169978256c2e5b94adb32696",
+  "categories": 30,
+  "national_total_raw_categories": 1134492.0389999999,
+  "category_totals": {
+    "Amenazas": 152552.0,
+    "Violencia intrafamiliar": 137765.0,
+    "Hurtos": 125875.039,
+    "Daños": 122033.0,
+    "Consumo de alcohol y drogas en la vía pública": 108038.0,
+    "Robos con violencia o intimidación": 61542.0,
+    "Lesiones leves": 59535.0,
+    "Robo de objetos de o desde vehículo": 50337.0,
+    "Robo en lugar no habitado": 42775.0,
+    "Robo en lugar habitado": 41601.0,
+    "Robo por sorpresa": 39620.0,
+    "Delitos asociados a armas": 29920.0,
+    "Robo de vehículo motorizado": 28666.0,
+    "Crímenes y simples delitos ley de armas": 21939.0,
+    "Delitos asociados a drogas": 18862.0,
+    "Abusos sexuales": 12867.0,
+    "Otros robos con fuerza en las cosas": 11447.0,
+    "Receptación": 10892.0,
+    "Lesiones menos graves": 9438.0,
+    "Robo frustrado": 8682.0,
+    "Robo violento de vehículo motorizado": 8202.0,
+    "Porte de arma cortante o punzante": 7981.0,
+    "Lesiones graves o gravísimas": 7177.0,
+    "Amenaza falta o riña": 6510.0,
+    "Violaciones": 4457.0,
+    "Acosos sexuales": 1868.0,
+    "Otros delitos sexuales": 1530.0,
+    "Desórdenes públicos": 1387.0,
+    "Homicidios": 941.0,
+    "Femicidios": 53.0
+  },
+  "family_reference": {
+    "Delitos asociados a armas": {
+      "reference_status": "comparable_complete",
+      "categories_used": [
+        "Delitos asociados a armas"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 29920.0,
+      "commune_vector_sha256": "c0f7698fcc6ebdd611f2050158b7f0eec2cda326d4d60623924a1a8fd9b86c42",
+      "region_vector_sha256": "397377af3b05fd23ce122cd78190565d14453db251c4ca42b07543c07bf5c481",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 1124.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 702.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 500.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 189.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 2751.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 1388.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 2207.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 1127.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 1340.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 928.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 79.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 2635.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 10967.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 576.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 2915.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 492.0
+        }
+      ]
+    },
+    "Delitos asociados a drogas": {
+      "reference_status": "comparable_complete",
+      "categories_used": [
+        "Delitos asociados a drogas"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 18862.0,
+      "commune_vector_sha256": "c5e7eac9467219b526e469e971eeaeeaae101022c7483e3eab0d1f1c096e80fc",
+      "region_vector_sha256": "6f2a898365e062bbb424bff98eb738430fa8efb5f330ba8e0005ecddb5cb8737",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 813.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 481.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 500.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 139.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 1754.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 847.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 1327.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 1082.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 977.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 434.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 167.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 1183.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 5823.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 654.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 2222.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 459.0
+        }
+      ]
+    },
+    "Delitos contra la vida e integridad": {
+      "reference_status": "comparable_complete",
+      "categories_used": [
+        "Homicidios",
+        "Femicidios",
+        "Violaciones",
+        "Abusos sexuales",
+        "Acosos sexuales",
+        "Otros delitos sexuales",
+        "Lesiones graves o gravísimas",
+        "Lesiones menos graves",
+        "Lesiones leves",
+        "Amenazas"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 250418.0,
+      "commune_vector_sha256": "bf2bb49c872461d95ebf91f576db7a0b6f5216d807b22f198152ecc97bf5d8b2",
+      "region_vector_sha256": "fc6b109a45e1c24d13d1691cfdad8771d795e4bc00b9be0740364863cf8931ef",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 9218.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 3510.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 4106.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 1411.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 19508.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 11598.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 14217.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 15013.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 13751.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 5576.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 1934.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 15102.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 95215.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 5613.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 28317.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 6329.0
+        }
+      ]
+    },
+    "Robos violentos": {
+      "reference_status": "comparable_complete",
+      "categories_used": [
+        "Robos con violencia o intimidación",
+        "Robo violento de vehículo motorizado",
+        "Robo por sorpresa"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 109364.0,
+      "commune_vector_sha256": "41d0d4bd7c19e3a67bea66cb058f80b72f725ef0817a32d7609bfbc965ba239b",
+      "region_vector_sha256": "555193d842b7287e35a245f1f5bff24b77b3f5cc9f294b7cc53f752382c5a977",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 2924.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 1287.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 1158.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 76.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 4312.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 2551.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 1517.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 2435.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 1513.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 592.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 93.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 2187.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 78177.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 1629.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 8099.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 814.0
+        }
+      ]
+    },
+    "Violencia intrafamiliar": {
+      "reference_status": "comparable_complete",
+      "categories_used": [
+        "Violencia intrafamiliar"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 137765.0,
+      "commune_vector_sha256": "776778cacb4a53e052c46039786236c803ffc102e9758ce2d074108a881db0e6",
+      "region_vector_sha256": "c98d35555d573b29071a5cc5e2d4ef0ecdc9ecbbb4ed50d62fe8331a4e8eca16",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 5417.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 2344.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 2258.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 1031.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 11745.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 6350.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 8821.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 8235.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 9229.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 3338.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 1265.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 9890.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 45856.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 4599.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 13761.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 3626.0
+        }
+      ]
+    },
+    "Delitos contra la propiedad no violentos": {
+      "reference_status": "comparable_candidate",
+      "categories_used": [
+        "Robo en lugar habitado",
+        "Robo en lugar no habitado",
+        "Robo de vehículo motorizado",
+        "Robo de objetos de o desde vehículo",
+        "Otros robos con fuerza en las cosas",
+        "Hurtos",
+        "Receptación"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 311593.039,
+      "commune_vector_sha256": "da34d2a0cf3d1f25030d5a571e465a6d37e0ef33344e44930eecf4c1ae5b466f",
+      "region_vector_sha256": "dea3be37054275ac419de630850a0f070f3ab174213a0d20b2b388a60baaf448",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 12564.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 4831.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 5553.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 1033.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 26508.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 16222.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 14771.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 15532.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 14059.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 6620.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 1071.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 15360.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 126614.039
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 5719.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 37352.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 7784.0
+        }
+      ]
+    },
+    "Incivilidades": {
+      "reference_status": "known_incomplete_backbone",
+      "categories_used": [
+        "Amenaza falta o riña",
+        "Consumo de alcohol y drogas en la vía pública",
+        "Daños",
+        "Desórdenes públicos"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 237968.0,
+      "commune_vector_sha256": "2de599af2bbf0f8ed4fe4990f1137b5930fea99b516100278a3a664e3b14284b",
+      "region_vector_sha256": "6e2565bdd6bb28c632b842bb48bdc623023b47755630021ae4bc78a358aabd37",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 10200.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 4008.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 4172.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 2501.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 20509.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 13470.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 19263.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 13533.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 24099.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 8815.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 2392.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 13309.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 65334.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 3877.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 26086.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 6400.0
+        }
+      ]
+    },
+    "Otros delitos o faltas": {
+      "reference_status": "known_incomplete_backbone",
+      "categories_used": [
+        "Robo frustrado"
+      ],
+      "communes": 345,
+      "regions": 16,
+      "national_total": 8682.0,
+      "commune_vector_sha256": "240910c61dbd54788b9e855c0d00be9087897e14930f72bfc802e48c20f942a1",
+      "region_vector_sha256": "432cd44844bfb554913f2454acc4c9c49fa742ccd00386b64cd42cc33328bb2c",
+      "region_totals": [
+        {
+          "region_name": "Antofagasta",
+          "region_norm": "antofagasta",
+          "value": 346.0
+        },
+        {
+          "region_name": "Arica y Parinacota",
+          "region_norm": "arica y parinacota",
+          "value": 94.0
+        },
+        {
+          "region_name": "Atacama",
+          "region_norm": "atacama",
+          "value": 100.0
+        },
+        {
+          "region_name": "Aysén del General Carlos Ibáñez del Campo",
+          "region_norm": "aysen del general carlos ibanez del campo",
+          "value": 20.0
+        },
+        {
+          "region_name": "Biobío",
+          "region_norm": "biobio",
+          "value": 684.0
+        },
+        {
+          "region_name": "Coquimbo",
+          "region_norm": "coquimbo",
+          "value": 574.0
+        },
+        {
+          "region_name": "La Araucanía",
+          "region_norm": "la araucania",
+          "value": 460.0
+        },
+        {
+          "region_name": "Libertador Gral. Bernardo O'Higgins",
+          "region_norm": "libertador general bernardo o higgins",
+          "value": 453.0
+        },
+        {
+          "region_name": "Los Lagos",
+          "region_norm": "los lagos",
+          "value": 222.0
+        },
+        {
+          "region_name": "Los Ríos",
+          "region_norm": "los rios",
+          "value": 163.0
+        },
+        {
+          "region_name": "Magallanes y de la Antártica Chilena",
+          "region_norm": "magallanes y de la antartica chilena",
+          "value": 10.0
+        },
+        {
+          "region_name": "Maule",
+          "region_norm": "maule",
+          "value": 368.0
+        },
+        {
+          "region_name": "Metropolitana de Santiago",
+          "region_norm": "metropolitana de santiago",
+          "value": 3726.0
+        },
+        {
+          "region_name": "Tarapacá",
+          "region_norm": "tarapaca",
+          "value": 158.0
+        },
+        {
+          "region_name": "Valparaíso",
+          "region_norm": "valparaiso",
+          "value": 1044.0
+        },
+        {
+          "region_name": "Ñuble",
+          "region_norm": "nuble",
+          "value": 260.0
+        }
+      ]
+    }
+  },
+  "commune_totals_raw_categories": [
+    {
+      "commune_code": "01101",
+      "commune_name": "Iquique",
+      "region_name": "Tarapacá",
+      "value": 12661.0
+    },
+    {
+      "commune_code": "01107",
+      "commune_name": "Alto Hospicio",
+      "region_name": "Tarapacá",
+      "value": 7885.0
+    },
+    {
+      "commune_code": "01401",
+      "commune_name": "Pozo Almonte",
+      "region_name": "Tarapacá",
+      "value": 1800.0
+    },
+    {
+      "commune_code": "01402",
+      "commune_name": "Camiña",
+      "region_name": "Tarapacá",
+      "value": 65.0
+    },
+    {
+      "commune_code": "01403",
+      "commune_name": "Colchane",
+      "region_name": "Tarapacá",
+      "value": 185.0
+    },
+    {
+      "commune_code": "01404",
+      "commune_name": "Huara",
+      "region_name": "Tarapacá",
+      "value": 325.0
+    },
+    {
+      "commune_code": "01405",
+      "commune_name": "Pica",
+      "region_name": "Tarapacá",
+      "value": 480.0
+    },
+    {
+      "commune_code": "02101",
+      "commune_name": "Antofagasta",
+      "region_name": "Antofagasta",
+      "value": 24561.0
+    },
+    {
+      "commune_code": "02102",
+      "commune_name": "Mejillones",
+      "region_name": "Antofagasta",
+      "value": 1275.0
+    },
+    {
+      "commune_code": "02103",
+      "commune_name": "Sierra Gorda",
+      "region_name": "Antofagasta",
+      "value": 643.0
+    },
+    {
+      "commune_code": "02104",
+      "commune_name": "Taltal",
+      "region_name": "Antofagasta",
+      "value": 865.0
+    },
+    {
+      "commune_code": "02201",
+      "commune_name": "Calama",
+      "region_name": "Antofagasta",
+      "value": 11947.0
+    },
+    {
+      "commune_code": "02202",
+      "commune_name": "Ollagüe",
+      "region_name": "Antofagasta",
+      "value": 56.0
+    },
+    {
+      "commune_code": "02203",
+      "commune_name": "San Pedro de Atacama",
+      "region_name": "Antofagasta",
+      "value": 1020.0
+    },
+    {
+      "commune_code": "02301",
+      "commune_name": "Tocopilla",
+      "region_name": "Antofagasta",
+      "value": 2587.0
+    },
+    {
+      "commune_code": "02302",
+      "commune_name": "María Elena",
+      "region_name": "Antofagasta",
+      "value": 776.0
+    },
+    {
+      "commune_code": "03101",
+      "commune_name": "Copiapó",
+      "region_name": "Atacama",
+      "value": 9885.0
+    },
+    {
+      "commune_code": "03102",
+      "commune_name": "Caldera",
+      "region_name": "Atacama",
+      "value": 1734.0
+    },
+    {
+      "commune_code": "03103",
+      "commune_name": "Tierra Amarilla",
+      "region_name": "Atacama",
+      "value": 842.0
+    },
+    {
+      "commune_code": "03201",
+      "commune_name": "Chañaral",
+      "region_name": "Atacama",
+      "value": 768.0
+    },
+    {
+      "commune_code": "03202",
+      "commune_name": "Diego de Almagro",
+      "region_name": "Atacama",
+      "value": 928.0
+    },
+    {
+      "commune_code": "03301",
+      "commune_name": "Vallenar",
+      "region_name": "Atacama",
+      "value": 3401.0
+    },
+    {
+      "commune_code": "03302",
+      "commune_name": "Alto del Carmen",
+      "region_name": "Atacama",
+      "value": 242.0
+    },
+    {
+      "commune_code": "03303",
+      "commune_name": "Freirina",
+      "region_name": "Atacama",
+      "value": 400.0
+    },
+    {
+      "commune_code": "03304",
+      "commune_name": "Huasco",
+      "region_name": "Atacama",
+      "value": 647.0
+    },
+    {
+      "commune_code": "04101",
+      "commune_name": "La Serena",
+      "region_name": "Coquimbo",
+      "value": 16191.0
+    },
+    {
+      "commune_code": "04102",
+      "commune_name": "Coquimbo",
+      "region_name": "Coquimbo",
+      "value": 18880.0
+    },
+    {
+      "commune_code": "04103",
+      "commune_name": "Andacollo",
+      "region_name": "Coquimbo",
+      "value": 806.0
+    },
+    {
+      "commune_code": "04104",
+      "commune_name": "La Higuera",
+      "region_name": "Coquimbo",
+      "value": 395.0
+    },
+    {
+      "commune_code": "04105",
+      "commune_name": "Paiguano",
+      "region_name": "Coquimbo",
+      "value": 612.0
+    },
+    {
+      "commune_code": "04106",
+      "commune_name": "Vicuña",
+      "region_name": "Coquimbo",
+      "value": 2561.0
+    },
+    {
+      "commune_code": "04201",
+      "commune_name": "Illapel",
+      "region_name": "Coquimbo",
+      "value": 1721.0
+    },
+    {
+      "commune_code": "04202",
+      "commune_name": "Canela",
+      "region_name": "Coquimbo",
+      "value": 439.0
+    },
+    {
+      "commune_code": "04203",
+      "commune_name": "Los Vilos",
+      "region_name": "Coquimbo",
+      "value": 2122.0
+    },
+    {
+      "commune_code": "04204",
+      "commune_name": "Salamanca",
+      "region_name": "Coquimbo",
+      "value": 1353.0
+    },
+    {
+      "commune_code": "04301",
+      "commune_name": "Ovalle",
+      "region_name": "Coquimbo",
+      "value": 6645.0
+    },
+    {
+      "commune_code": "04302",
+      "commune_name": "Combarbalá",
+      "region_name": "Coquimbo",
+      "value": 534.0
+    },
+    {
+      "commune_code": "04303",
+      "commune_name": "Monte Patria",
+      "region_name": "Coquimbo",
+      "value": 1539.0
+    },
+    {
+      "commune_code": "04304",
+      "commune_name": "Punitaqui",
+      "region_name": "Coquimbo",
+      "value": 479.0
+    },
+    {
+      "commune_code": "04305",
+      "commune_name": "Río Hurtado",
+      "region_name": "Coquimbo",
+      "value": 111.0
+    },
+    {
+      "commune_code": "05101",
+      "commune_name": "Valparaíso",
+      "region_name": "Valparaíso",
+      "value": 22288.0
+    },
+    {
+      "commune_code": "05102",
+      "commune_name": "Casablanca",
+      "region_name": "Valparaíso",
+      "value": 1840.0
+    },
+    {
+      "commune_code": "05103",
+      "commune_name": "Concón",
+      "region_name": "Valparaíso",
+      "value": 3105.0
+    },
+    {
+      "commune_code": "05104",
+      "commune_name": "Juan Fernández",
+      "region_name": "Valparaíso",
+      "value": 51.0
+    },
+    {
+      "commune_code": "05105",
+      "commune_name": "Puchuncaví",
+      "region_name": "Valparaíso",
+      "value": 2067.0
+    },
+    {
+      "commune_code": "05107",
+      "commune_name": "Quintero",
+      "region_name": "Valparaíso",
+      "value": 3150.0
+    },
+    {
+      "commune_code": "05109",
+      "commune_name": "Viña del Mar",
+      "region_name": "Valparaíso",
+      "value": 21793.0
+    },
+    {
+      "commune_code": "05201",
+      "commune_name": "Isla de Pascua",
+      "region_name": "Valparaíso",
+      "value": 742.0
+    },
+    {
+      "commune_code": "05301",
+      "commune_name": "Los Andes",
+      "region_name": "Valparaíso",
+      "value": 4049.0
+    },
+    {
+      "commune_code": "05302",
+      "commune_name": "Calle Larga",
+      "region_name": "Valparaíso",
+      "value": 623.0
+    },
+    {
+      "commune_code": "05303",
+      "commune_name": "Rinconada",
+      "region_name": "Valparaíso",
+      "value": 615.0
+    },
+    {
+      "commune_code": "05304",
+      "commune_name": "San Esteban",
+      "region_name": "Valparaíso",
+      "value": 868.0
+    },
+    {
+      "commune_code": "05401",
+      "commune_name": "La Ligua",
+      "region_name": "Valparaíso",
+      "value": 2578.0
+    },
+    {
+      "commune_code": "05402",
+      "commune_name": "Cabildo",
+      "region_name": "Valparaíso",
+      "value": 1029.0
+    },
+    {
+      "commune_code": "05403",
+      "commune_name": "Papudo",
+      "region_name": "Valparaíso",
+      "value": 584.0
+    },
+    {
+      "commune_code": "05404",
+      "commune_name": "Petorca",
+      "region_name": "Valparaíso",
+      "value": 387.0
+    },
+    {
+      "commune_code": "05405",
+      "commune_name": "Zapallar",
+      "region_name": "Valparaíso",
+      "value": 636.0
+    },
+    {
+      "commune_code": "05501",
+      "commune_name": "Quillota",
+      "region_name": "Valparaíso",
+      "value": 5332.0
+    },
+    {
+      "commune_code": "05502",
+      "commune_name": "Calera",
+      "region_name": "Valparaíso",
+      "value": 3142.0
+    },
+    {
+      "commune_code": "05503",
+      "commune_name": "Hijuelas",
+      "region_name": "Valparaíso",
+      "value": 928.0
+    },
+    {
+      "commune_code": "05504",
+      "commune_name": "La Cruz",
+      "region_name": "Valparaíso",
+      "value": 1017.0
+    },
+    {
+      "commune_code": "05506",
+      "commune_name": "Nogales",
+      "region_name": "Valparaíso",
+      "value": 1224.0
+    },
+    {
+      "commune_code": "05601",
+      "commune_name": "San Antonio",
+      "region_name": "Valparaíso",
+      "value": 6938.0
+    },
+    {
+      "commune_code": "05602",
+      "commune_name": "Algarrobo",
+      "region_name": "Valparaíso",
+      "value": 1643.0
+    },
+    {
+      "commune_code": "05603",
+      "commune_name": "Cartagena",
+      "region_name": "Valparaíso",
+      "value": 3872.0
+    },
+    {
+      "commune_code": "05604",
+      "commune_name": "El Quisco",
+      "region_name": "Valparaíso",
+      "value": 2138.0
+    },
+    {
+      "commune_code": "05605",
+      "commune_name": "El Tabo",
+      "region_name": "Valparaíso",
+      "value": 1932.0
+    },
+    {
+      "commune_code": "05606",
+      "commune_name": "Santo Domingo",
+      "region_name": "Valparaíso",
+      "value": 553.0
+    },
+    {
+      "commune_code": "05701",
+      "commune_name": "San Felipe",
+      "region_name": "Valparaíso",
+      "value": 5072.0
+    },
+    {
+      "commune_code": "05702",
+      "commune_name": "Catemu",
+      "region_name": "Valparaíso",
+      "value": 716.0
+    },
+    {
+      "commune_code": "05703",
+      "commune_name": "Llaillay",
+      "region_name": "Valparaíso",
+      "value": 1568.0
+    },
+    {
+      "commune_code": "05704",
+      "commune_name": "Panquehue",
+      "region_name": "Valparaíso",
+      "value": 424.0
+    },
+    {
+      "commune_code": "05705",
+      "commune_name": "Putaendo",
+      "region_name": "Valparaíso",
+      "value": 741.0
+    },
+    {
+      "commune_code": "05706",
+      "commune_name": "Santa María",
+      "region_name": "Valparaíso",
+      "value": 744.0
+    },
+    {
+      "commune_code": "05801",
+      "commune_name": "Quilpué",
+      "region_name": "Valparaíso",
+      "value": 8566.0
+    },
+    {
+      "commune_code": "05802",
+      "commune_name": "Limache",
+      "region_name": "Valparaíso",
+      "value": 3488.0
+    },
+    {
+      "commune_code": "05803",
+      "commune_name": "Olmué",
+      "region_name": "Valparaíso",
+      "value": 1122.0
+    },
+    {
+      "commune_code": "05804",
+      "commune_name": "Villa Alemana",
+      "region_name": "Valparaíso",
+      "value": 5146.0
+    },
+    {
+      "commune_code": "06101",
+      "commune_name": "Rancagua",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 15769.0
+    },
+    {
+      "commune_code": "06102",
+      "commune_name": "Codegua",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 939.0
+    },
+    {
+      "commune_code": "06103",
+      "commune_name": "Coinco",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 400.0
+    },
+    {
+      "commune_code": "06104",
+      "commune_name": "Coltauco",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 886.0
+    },
+    {
+      "commune_code": "06105",
+      "commune_name": "Doñihue",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1123.0
+    },
+    {
+      "commune_code": "06106",
+      "commune_name": "Graneros",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 2693.0
+    },
+    {
+      "commune_code": "06107",
+      "commune_name": "Las Cabras",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1795.0
+    },
+    {
+      "commune_code": "06108",
+      "commune_name": "Machalí",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 2546.0
+    },
+    {
+      "commune_code": "06109",
+      "commune_name": "Malloa",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 695.0
+    },
+    {
+      "commune_code": "06110",
+      "commune_name": "Mostazal",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 2277.0
+    },
+    {
+      "commune_code": "06111",
+      "commune_name": "Olivar",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 686.0
+    },
+    {
+      "commune_code": "06112",
+      "commune_name": "Peumo",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1045.0
+    },
+    {
+      "commune_code": "06113",
+      "commune_name": "Pichidegua",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 791.0
+    },
+    {
+      "commune_code": "06114",
+      "commune_name": "Quinta de Tilcoco",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 669.0
+    },
+    {
+      "commune_code": "06115",
+      "commune_name": "Rengo",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 4535.0
+    },
+    {
+      "commune_code": "06116",
+      "commune_name": "Requínoa",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1768.0
+    },
+    {
+      "commune_code": "06117",
+      "commune_name": "San Vicente",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 3103.0
+    },
+    {
+      "commune_code": "06201",
+      "commune_name": "Pichilemu",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1604.0
+    },
+    {
+      "commune_code": "06202",
+      "commune_name": "La Estrella",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 174.0
+    },
+    {
+      "commune_code": "06203",
+      "commune_name": "Litueche",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 472.0
+    },
+    {
+      "commune_code": "06204",
+      "commune_name": "Marchihue",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 348.0
+    },
+    {
+      "commune_code": "06205",
+      "commune_name": "Navidad",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 511.0
+    },
+    {
+      "commune_code": "06206",
+      "commune_name": "Paredones",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 294.0
+    },
+    {
+      "commune_code": "06301",
+      "commune_name": "San Fernando",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 5138.0
+    },
+    {
+      "commune_code": "06302",
+      "commune_name": "Chépica",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 595.0
+    },
+    {
+      "commune_code": "06303",
+      "commune_name": "Chimbarongo",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1840.0
+    },
+    {
+      "commune_code": "06304",
+      "commune_name": "Lolol",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 293.0
+    },
+    {
+      "commune_code": "06305",
+      "commune_name": "Nancagua",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 1186.0
+    },
+    {
+      "commune_code": "06306",
+      "commune_name": "Palmilla",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 527.0
+    },
+    {
+      "commune_code": "06307",
+      "commune_name": "Peralillo",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 637.0
+    },
+    {
+      "commune_code": "06308",
+      "commune_name": "Placilla",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 526.0
+    },
+    {
+      "commune_code": "06309",
+      "commune_name": "Pumanque",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 195.0
+    },
+    {
+      "commune_code": "06310",
+      "commune_name": "Santa Cruz",
+      "region_name": "Libertador Gral. Bernardo O'Higgins",
+      "value": 2477.0
+    },
+    {
+      "commune_code": "07101",
+      "commune_name": "Talca",
+      "region_name": "Maule",
+      "value": 14025.0
+    },
+    {
+      "commune_code": "07102",
+      "commune_name": "Constitución",
+      "region_name": "Maule",
+      "value": 2575.0
+    },
+    {
+      "commune_code": "07103",
+      "commune_name": "Curepto",
+      "region_name": "Maule",
+      "value": 390.0
+    },
+    {
+      "commune_code": "07104",
+      "commune_name": "Empedrado",
+      "region_name": "Maule",
+      "value": 188.0
+    },
+    {
+      "commune_code": "07105",
+      "commune_name": "Maule",
+      "region_name": "Maule",
+      "value": 2010.0
+    },
+    {
+      "commune_code": "07106",
+      "commune_name": "Pelarco",
+      "region_name": "Maule",
+      "value": 465.0
+    },
+    {
+      "commune_code": "07107",
+      "commune_name": "Pencahue",
+      "region_name": "Maule",
+      "value": 476.0
+    },
+    {
+      "commune_code": "07108",
+      "commune_name": "Río Claro",
+      "region_name": "Maule",
+      "value": 611.0
+    },
+    {
+      "commune_code": "07109",
+      "commune_name": "San Clemente",
+      "region_name": "Maule",
+      "value": 2598.0
+    },
+    {
+      "commune_code": "07110",
+      "commune_name": "San Rafael",
+      "region_name": "Maule",
+      "value": 596.0
+    },
+    {
+      "commune_code": "07201",
+      "commune_name": "Cauquenes",
+      "region_name": "Maule",
+      "value": 2156.0
+    },
+    {
+      "commune_code": "07202",
+      "commune_name": "Chanco",
+      "region_name": "Maule",
+      "value": 341.0
+    },
+    {
+      "commune_code": "07203",
+      "commune_name": "Pelluhue",
+      "region_name": "Maule",
+      "value": 691.0
+    },
+    {
+      "commune_code": "07301",
+      "commune_name": "Curicó",
+      "region_name": "Maule",
+      "value": 9513.0
+    },
+    {
+      "commune_code": "07302",
+      "commune_name": "Hualañé",
+      "region_name": "Maule",
+      "value": 646.0
+    },
+    {
+      "commune_code": "07303",
+      "commune_name": "Licantén",
+      "region_name": "Maule",
+      "value": 584.0
+    },
+    {
+      "commune_code": "07304",
+      "commune_name": "Molina",
+      "region_name": "Maule",
+      "value": 3205.0
+    },
+    {
+      "commune_code": "07305",
+      "commune_name": "Rauco",
+      "region_name": "Maule",
+      "value": 531.0
+    },
+    {
+      "commune_code": "07306",
+      "commune_name": "Romeral",
+      "region_name": "Maule",
+      "value": 1233.0
+    },
+    {
+      "commune_code": "07307",
+      "commune_name": "Sagrada Familia",
+      "region_name": "Maule",
+      "value": 911.0
+    },
+    {
+      "commune_code": "07308",
+      "commune_name": "Teno",
+      "region_name": "Maule",
+      "value": 1506.0
+    },
+    {
+      "commune_code": "07309",
+      "commune_name": "Vichuquén",
+      "region_name": "Maule",
+      "value": 324.0
+    },
+    {
+      "commune_code": "07401",
+      "commune_name": "Linares",
+      "region_name": "Maule",
+      "value": 5040.0
+    },
+    {
+      "commune_code": "07402",
+      "commune_name": "Colbún",
+      "region_name": "Maule",
+      "value": 936.0
+    },
+    {
+      "commune_code": "07403",
+      "commune_name": "Longaví",
+      "region_name": "Maule",
+      "value": 1567.0
+    },
+    {
+      "commune_code": "07404",
+      "commune_name": "Parral",
+      "region_name": "Maule",
+      "value": 3050.0
+    },
+    {
+      "commune_code": "07405",
+      "commune_name": "Retiro",
+      "region_name": "Maule",
+      "value": 1291.0
+    },
+    {
+      "commune_code": "07406",
+      "commune_name": "San Javier",
+      "region_name": "Maule",
+      "value": 3345.0
+    },
+    {
+      "commune_code": "07407",
+      "commune_name": "Villa Alegre",
+      "region_name": "Maule",
+      "value": 997.0
+    },
+    {
+      "commune_code": "07408",
+      "commune_name": "Yerbas Buenas",
+      "region_name": "Maule",
+      "value": 868.0
+    },
+    {
+      "commune_code": "08101",
+      "commune_name": "Concepción",
+      "region_name": "Biobío",
+      "value": 16769.0
+    },
+    {
+      "commune_code": "08102",
+      "commune_name": "Coronel",
+      "region_name": "Biobío",
+      "value": 5113.0
+    },
+    {
+      "commune_code": "08103",
+      "commune_name": "Chiguayante",
+      "region_name": "Biobío",
+      "value": 3117.0
+    },
+    {
+      "commune_code": "08104",
+      "commune_name": "Florida",
+      "region_name": "Biobío",
+      "value": 558.0
+    },
+    {
+      "commune_code": "08105",
+      "commune_name": "Hualqui",
+      "region_name": "Biobío",
+      "value": 975.0
+    },
+    {
+      "commune_code": "08106",
+      "commune_name": "Lota",
+      "region_name": "Biobío",
+      "value": 2038.0
+    },
+    {
+      "commune_code": "08107",
+      "commune_name": "Penco",
+      "region_name": "Biobío",
+      "value": 2464.0
+    },
+    {
+      "commune_code": "08108",
+      "commune_name": "San Pedro de la Paz",
+      "region_name": "Biobío",
+      "value": 6072.0
+    },
+    {
+      "commune_code": "08109",
+      "commune_name": "Santa Juana",
+      "region_name": "Biobío",
+      "value": 823.0
+    },
+    {
+      "commune_code": "08110",
+      "commune_name": "Talcahuano",
+      "region_name": "Biobío",
+      "value": 8793.0
+    },
+    {
+      "commune_code": "08111",
+      "commune_name": "Tomé",
+      "region_name": "Biobío",
+      "value": 3513.0
+    },
+    {
+      "commune_code": "08112",
+      "commune_name": "Hualpén",
+      "region_name": "Biobío",
+      "value": 4546.0
+    },
+    {
+      "commune_code": "08201",
+      "commune_name": "Lebu",
+      "region_name": "Biobío",
+      "value": 1663.0
+    },
+    {
+      "commune_code": "08202",
+      "commune_name": "Arauco",
+      "region_name": "Biobío",
+      "value": 2218.0
+    },
+    {
+      "commune_code": "08203",
+      "commune_name": "Cañete",
+      "region_name": "Biobío",
+      "value": 2126.0
+    },
+    {
+      "commune_code": "08204",
+      "commune_name": "Contulmo",
+      "region_name": "Biobío",
+      "value": 221.0
+    },
+    {
+      "commune_code": "08205",
+      "commune_name": "Curanilahue",
+      "region_name": "Biobío",
+      "value": 1741.0
+    },
+    {
+      "commune_code": "08206",
+      "commune_name": "Los Alamos",
+      "region_name": "Biobío",
+      "value": 1284.0
+    },
+    {
+      "commune_code": "08207",
+      "commune_name": "Tirúa",
+      "region_name": "Biobío",
+      "value": 572.0
+    },
+    {
+      "commune_code": "08301",
+      "commune_name": "Los Angeles",
+      "region_name": "Biobío",
+      "value": 12377.0
+    },
+    {
+      "commune_code": "08302",
+      "commune_name": "Antuco",
+      "region_name": "Biobío",
+      "value": 210.0
+    },
+    {
+      "commune_code": "08303",
+      "commune_name": "Cabrero",
+      "region_name": "Biobío",
+      "value": 2336.0
+    },
+    {
+      "commune_code": "08304",
+      "commune_name": "Laja",
+      "region_name": "Biobío",
+      "value": 1452.0
+    },
+    {
+      "commune_code": "08305",
+      "commune_name": "Mulchén",
+      "region_name": "Biobío",
+      "value": 2663.0
+    },
+    {
+      "commune_code": "08306",
+      "commune_name": "Nacimiento",
+      "region_name": "Biobío",
+      "value": 1465.0
+    },
+    {
+      "commune_code": "08307",
+      "commune_name": "Negrete",
+      "region_name": "Biobío",
+      "value": 545.0
+    },
+    {
+      "commune_code": "08308",
+      "commune_name": "Quilaco",
+      "region_name": "Biobío",
+      "value": 230.0
+    },
+    {
+      "commune_code": "08309",
+      "commune_name": "Quilleco",
+      "region_name": "Biobío",
+      "value": 369.0
+    },
+    {
+      "commune_code": "08310",
+      "commune_name": "San Rosendo",
+      "region_name": "Biobío",
+      "value": 354.0
+    },
+    {
+      "commune_code": "08311",
+      "commune_name": "Santa Bárbara",
+      "region_name": "Biobío",
+      "value": 1093.0
+    },
+    {
+      "commune_code": "08312",
+      "commune_name": "Tucapel",
+      "region_name": "Biobío",
+      "value": 659.0
+    },
+    {
+      "commune_code": "08313",
+      "commune_name": "Yumbel",
+      "region_name": "Biobío",
+      "value": 1814.0
+    },
+    {
+      "commune_code": "08314",
+      "commune_name": "Alto Biobío",
+      "region_name": "Biobío",
+      "value": 349.0
+    },
+    {
+      "commune_code": "09101",
+      "commune_name": "Temuco",
+      "region_name": "La Araucanía",
+      "value": 21943.0
+    },
+    {
+      "commune_code": "09102",
+      "commune_name": "Carahue",
+      "region_name": "La Araucanía",
+      "value": 1139.0
+    },
+    {
+      "commune_code": "09103",
+      "commune_name": "Cunco",
+      "region_name": "La Araucanía",
+      "value": 861.0
+    },
+    {
+      "commune_code": "09104",
+      "commune_name": "Curarrehue",
+      "region_name": "La Araucanía",
+      "value": 472.0
+    },
+    {
+      "commune_code": "09105",
+      "commune_name": "Freire",
+      "region_name": "La Araucanía",
+      "value": 1517.0
+    },
+    {
+      "commune_code": "09106",
+      "commune_name": "Galvarino",
+      "region_name": "La Araucanía",
+      "value": 559.0
+    },
+    {
+      "commune_code": "09107",
+      "commune_name": "Gorbea",
+      "region_name": "La Araucanía",
+      "value": 776.0
+    },
+    {
+      "commune_code": "09108",
+      "commune_name": "Lautaro",
+      "region_name": "La Araucanía",
+      "value": 2556.0
+    },
+    {
+      "commune_code": "09109",
+      "commune_name": "Loncoche",
+      "region_name": "La Araucanía",
+      "value": 1308.0
+    },
+    {
+      "commune_code": "09110",
+      "commune_name": "Melipeuco",
+      "region_name": "La Araucanía",
+      "value": 313.0
+    },
+    {
+      "commune_code": "09111",
+      "commune_name": "Nueva Imperial",
+      "region_name": "La Araucanía",
+      "value": 2130.0
+    },
+    {
+      "commune_code": "09112",
+      "commune_name": "Padre Las Casas",
+      "region_name": "La Araucanía",
+      "value": 3081.0
+    },
+    {
+      "commune_code": "09113",
+      "commune_name": "Perquenco",
+      "region_name": "La Araucanía",
+      "value": 603.0
+    },
+    {
+      "commune_code": "09114",
+      "commune_name": "Pitrufquén",
+      "region_name": "La Araucanía",
+      "value": 1841.0
+    },
+    {
+      "commune_code": "09115",
+      "commune_name": "Pucón",
+      "region_name": "La Araucanía",
+      "value": 2831.0
+    },
+    {
+      "commune_code": "09116",
+      "commune_name": "Saavedra",
+      "region_name": "La Araucanía",
+      "value": 619.0
+    },
+    {
+      "commune_code": "09117",
+      "commune_name": "Teodoro Schmidt",
+      "region_name": "La Araucanía",
+      "value": 961.0
+    },
+    {
+      "commune_code": "09118",
+      "commune_name": "Toltén",
+      "region_name": "La Araucanía",
+      "value": 440.0
+    },
+    {
+      "commune_code": "09119",
+      "commune_name": "Vilcún",
+      "region_name": "La Araucanía",
+      "value": 1311.0
+    },
+    {
+      "commune_code": "09120",
+      "commune_name": "Villarrica",
+      "region_name": "La Araucanía",
+      "value": 4278.0
+    },
+    {
+      "commune_code": "09121",
+      "commune_name": "Cholchol",
+      "region_name": "La Araucanía",
+      "value": 975.0
+    },
+    {
+      "commune_code": "09201",
+      "commune_name": "Angol",
+      "region_name": "La Araucanía",
+      "value": 3564.0
+    },
+    {
+      "commune_code": "09202",
+      "commune_name": "Collipulli",
+      "region_name": "La Araucanía",
+      "value": 2059.0
+    },
+    {
+      "commune_code": "09203",
+      "commune_name": "Curacautín",
+      "region_name": "La Araucanía",
+      "value": 1149.0
+    },
+    {
+      "commune_code": "09204",
+      "commune_name": "Ercilla",
+      "region_name": "La Araucanía",
+      "value": 755.0
+    },
+    {
+      "commune_code": "09205",
+      "commune_name": "Lonquimay",
+      "region_name": "La Araucanía",
+      "value": 618.0
+    },
+    {
+      "commune_code": "09206",
+      "commune_name": "Los Sauces",
+      "region_name": "La Araucanía",
+      "value": 358.0
+    },
+    {
+      "commune_code": "09207",
+      "commune_name": "Lumaco",
+      "region_name": "La Araucanía",
+      "value": 415.0
+    },
+    {
+      "commune_code": "09208",
+      "commune_name": "Purén",
+      "region_name": "La Araucanía",
+      "value": 641.0
+    },
+    {
+      "commune_code": "09209",
+      "commune_name": "Renaico",
+      "region_name": "La Araucanía",
+      "value": 685.0
+    },
+    {
+      "commune_code": "09210",
+      "commune_name": "Traiguén",
+      "region_name": "La Araucanía",
+      "value": 1353.0
+    },
+    {
+      "commune_code": "09211",
+      "commune_name": "Victoria",
+      "region_name": "La Araucanía",
+      "value": 2679.0
+    },
+    {
+      "commune_code": "10101",
+      "commune_name": "Puerto Montt",
+      "region_name": "Los Lagos",
+      "value": 26271.0
+    },
+    {
+      "commune_code": "10102",
+      "commune_name": "Calbuco",
+      "region_name": "Los Lagos",
+      "value": 2704.0
+    },
+    {
+      "commune_code": "10103",
+      "commune_name": "Cochamó",
+      "region_name": "Los Lagos",
+      "value": 216.0
+    },
+    {
+      "commune_code": "10104",
+      "commune_name": "Fresia",
+      "region_name": "Los Lagos",
+      "value": 815.0
+    },
+    {
+      "commune_code": "10105",
+      "commune_name": "Frutillar",
+      "region_name": "Los Lagos",
+      "value": 1454.0
+    },
+    {
+      "commune_code": "10106",
+      "commune_name": "Los Muermos",
+      "region_name": "Los Lagos",
+      "value": 801.0
+    },
+    {
+      "commune_code": "10107",
+      "commune_name": "Llanquihue",
+      "region_name": "Los Lagos",
+      "value": 1551.0
+    },
+    {
+      "commune_code": "10108",
+      "commune_name": "Maullín",
+      "region_name": "Los Lagos",
+      "value": 859.0
+    },
+    {
+      "commune_code": "10109",
+      "commune_name": "Puerto Varas",
+      "region_name": "Los Lagos",
+      "value": 3053.0
+    },
+    {
+      "commune_code": "10201",
+      "commune_name": "Castro",
+      "region_name": "Los Lagos",
+      "value": 2919.0
+    },
+    {
+      "commune_code": "10202",
+      "commune_name": "Ancud",
+      "region_name": "Los Lagos",
+      "value": 2484.0
+    },
+    {
+      "commune_code": "10203",
+      "commune_name": "Chonchi",
+      "region_name": "Los Lagos",
+      "value": 704.0
+    },
+    {
+      "commune_code": "10204",
+      "commune_name": "Curaco de Vélez",
+      "region_name": "Los Lagos",
+      "value": 130.0
+    },
+    {
+      "commune_code": "10205",
+      "commune_name": "Dalcahue",
+      "region_name": "Los Lagos",
+      "value": 994.0
+    },
+    {
+      "commune_code": "10206",
+      "commune_name": "Puqueldón",
+      "region_name": "Los Lagos",
+      "value": 182.0
+    },
+    {
+      "commune_code": "10207",
+      "commune_name": "Queilén",
+      "region_name": "Los Lagos",
+      "value": 229.0
+    },
+    {
+      "commune_code": "10208",
+      "commune_name": "Quellón",
+      "region_name": "Los Lagos",
+      "value": 1901.0
+    },
+    {
+      "commune_code": "10209",
+      "commune_name": "Quemchi",
+      "region_name": "Los Lagos",
+      "value": 254.0
+    },
+    {
+      "commune_code": "10210",
+      "commune_name": "Quinchao",
+      "region_name": "Los Lagos",
+      "value": 302.0
+    },
+    {
+      "commune_code": "10301",
+      "commune_name": "Osorno",
+      "region_name": "Los Lagos",
+      "value": 13071.0
+    },
+    {
+      "commune_code": "10302",
+      "commune_name": "Puerto Octay",
+      "region_name": "Los Lagos",
+      "value": 497.0
+    },
+    {
+      "commune_code": "10303",
+      "commune_name": "Purranque",
+      "region_name": "Los Lagos",
+      "value": 1233.0
+    },
+    {
+      "commune_code": "10304",
+      "commune_name": "Puyehue",
+      "region_name": "Los Lagos",
+      "value": 645.0
+    },
+    {
+      "commune_code": "10305",
+      "commune_name": "Río Negro",
+      "region_name": "Los Lagos",
+      "value": 908.0
+    },
+    {
+      "commune_code": "10306",
+      "commune_name": "San Juan de la Costa",
+      "region_name": "Los Lagos",
+      "value": 485.0
+    },
+    {
+      "commune_code": "10307",
+      "commune_name": "San Pablo",
+      "region_name": "Los Lagos",
+      "value": 743.0
+    },
+    {
+      "commune_code": "10401",
+      "commune_name": "Chaitén",
+      "region_name": "Los Lagos",
+      "value": 200.0
+    },
+    {
+      "commune_code": "10402",
+      "commune_name": "Futaleufú",
+      "region_name": "Los Lagos",
+      "value": 183.0
+    },
+    {
+      "commune_code": "10403",
+      "commune_name": "Hualaihué",
+      "region_name": "Los Lagos",
+      "value": 658.0
+    },
+    {
+      "commune_code": "10404",
+      "commune_name": "Palena",
+      "region_name": "Los Lagos",
+      "value": 84.0
+    },
+    {
+      "commune_code": "11101",
+      "commune_name": "Coihaique",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 3186.0
+    },
+    {
+      "commune_code": "11102",
+      "commune_name": "Lago Verde",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 40.0
+    },
+    {
+      "commune_code": "11201",
+      "commune_name": "Aisén",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 2010.0
+    },
+    {
+      "commune_code": "11202",
+      "commune_name": "Cisnes",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 451.0
+    },
+    {
+      "commune_code": "11203",
+      "commune_name": "Guaitecas",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 117.0
+    },
+    {
+      "commune_code": "11301",
+      "commune_name": "Cochrane",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 208.0
+    },
+    {
+      "commune_code": "11302",
+      "commune_name": "O'Higgins",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 36.0
+    },
+    {
+      "commune_code": "11303",
+      "commune_name": "Tortel",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 29.0
+    },
+    {
+      "commune_code": "11401",
+      "commune_name": "Chile Chico",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 370.0
+    },
+    {
+      "commune_code": "11402",
+      "commune_name": "Río Ibáñez",
+      "region_name": "Aysén del General Carlos Ibáñez del Campo",
+      "value": 142.0
+    },
+    {
+      "commune_code": "12101",
+      "commune_name": "Punta Arenas",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 5035.0
+    },
+    {
+      "commune_code": "12102",
+      "commune_name": "Laguna Blanca",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 14.0
+    },
+    {
+      "commune_code": "12103",
+      "commune_name": "Río Verde",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 0.0
+    },
+    {
+      "commune_code": "12104",
+      "commune_name": "San Gregorio",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 30.0
+    },
+    {
+      "commune_code": "12201",
+      "commune_name": "Cabo de Hornos",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 221.0
+    },
+    {
+      "commune_code": "12301",
+      "commune_name": "Porvenir",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 377.0
+    },
+    {
+      "commune_code": "12302",
+      "commune_name": "Primavera",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 57.0
+    },
+    {
+      "commune_code": "12303",
+      "commune_name": "Timaukel",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 9.0
+    },
+    {
+      "commune_code": "12401",
+      "commune_name": "Natales",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 1328.0
+    },
+    {
+      "commune_code": "12402",
+      "commune_name": "Torres del Paine",
+      "region_name": "Magallanes y de la Antártica Chilena",
+      "value": 19.0
+    },
+    {
+      "commune_code": "13101",
+      "commune_name": "Santiago",
+      "region_name": "Metropolitana de Santiago",
+      "value": 48285.039
+    },
+    {
+      "commune_code": "13102",
+      "commune_name": "Cerrillos",
+      "region_name": "Metropolitana de Santiago",
+      "value": 7014.0
+    },
+    {
+      "commune_code": "13103",
+      "commune_name": "Cerro Navia",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6829.0
+    },
+    {
+      "commune_code": "13104",
+      "commune_name": "Conchalí",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6393.0
+    },
+    {
+      "commune_code": "13105",
+      "commune_name": "El Bosque",
+      "region_name": "Metropolitana de Santiago",
+      "value": 8242.0
+    },
+    {
+      "commune_code": "13106",
+      "commune_name": "Estación Central",
+      "region_name": "Metropolitana de Santiago",
+      "value": 16016.0
+    },
+    {
+      "commune_code": "13107",
+      "commune_name": "Huechuraba",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6148.0
+    },
+    {
+      "commune_code": "13108",
+      "commune_name": "Independencia",
+      "region_name": "Metropolitana de Santiago",
+      "value": 7715.0
+    },
+    {
+      "commune_code": "13109",
+      "commune_name": "La Cisterna",
+      "region_name": "Metropolitana de Santiago",
+      "value": 7641.0
+    },
+    {
+      "commune_code": "13110",
+      "commune_name": "La Florida",
+      "region_name": "Metropolitana de Santiago",
+      "value": 19656.0
+    },
+    {
+      "commune_code": "13111",
+      "commune_name": "La Granja",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6812.0
+    },
+    {
+      "commune_code": "13112",
+      "commune_name": "La Pintana",
+      "region_name": "Metropolitana de Santiago",
+      "value": 9689.0
+    },
+    {
+      "commune_code": "13113",
+      "commune_name": "La Reina",
+      "region_name": "Metropolitana de Santiago",
+      "value": 4681.0
+    },
+    {
+      "commune_code": "13114",
+      "commune_name": "Las Condes",
+      "region_name": "Metropolitana de Santiago",
+      "value": 11219.0
+    },
+    {
+      "commune_code": "13115",
+      "commune_name": "Lo Barnechea",
+      "region_name": "Metropolitana de Santiago",
+      "value": 3638.0
+    },
+    {
+      "commune_code": "13116",
+      "commune_name": "Lo Espejo",
+      "region_name": "Metropolitana de Santiago",
+      "value": 5689.0
+    },
+    {
+      "commune_code": "13117",
+      "commune_name": "Lo Prado",
+      "region_name": "Metropolitana de Santiago",
+      "value": 5964.0
+    },
+    {
+      "commune_code": "13118",
+      "commune_name": "Macul",
+      "region_name": "Metropolitana de Santiago",
+      "value": 7306.0
+    },
+    {
+      "commune_code": "13119",
+      "commune_name": "Maipú",
+      "region_name": "Metropolitana de Santiago",
+      "value": 23595.0
+    },
+    {
+      "commune_code": "13120",
+      "commune_name": "Ñuñoa",
+      "region_name": "Metropolitana de Santiago",
+      "value": 13650.0
+    },
+    {
+      "commune_code": "13121",
+      "commune_name": "Pedro Aguirre Cerda",
+      "region_name": "Metropolitana de Santiago",
+      "value": 5265.0
+    },
+    {
+      "commune_code": "13122",
+      "commune_name": "Peñalolén",
+      "region_name": "Metropolitana de Santiago",
+      "value": 10701.0
+    },
+    {
+      "commune_code": "13123",
+      "commune_name": "Providencia",
+      "region_name": "Metropolitana de Santiago",
+      "value": 15550.0
+    },
+    {
+      "commune_code": "13124",
+      "commune_name": "Pudahuel",
+      "region_name": "Metropolitana de Santiago",
+      "value": 14143.0
+    },
+    {
+      "commune_code": "13125",
+      "commune_name": "Quilicura",
+      "region_name": "Metropolitana de Santiago",
+      "value": 11039.0
+    },
+    {
+      "commune_code": "13126",
+      "commune_name": "Quinta Normal",
+      "region_name": "Metropolitana de Santiago",
+      "value": 9215.0
+    },
+    {
+      "commune_code": "13127",
+      "commune_name": "Recoleta",
+      "region_name": "Metropolitana de Santiago",
+      "value": 13047.0
+    },
+    {
+      "commune_code": "13128",
+      "commune_name": "Renca",
+      "region_name": "Metropolitana de Santiago",
+      "value": 8085.0
+    },
+    {
+      "commune_code": "13129",
+      "commune_name": "San Joaquín",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6239.0
+    },
+    {
+      "commune_code": "13130",
+      "commune_name": "San Miguel",
+      "region_name": "Metropolitana de Santiago",
+      "value": 9518.0
+    },
+    {
+      "commune_code": "13131",
+      "commune_name": "San Ramón",
+      "region_name": "Metropolitana de Santiago",
+      "value": 5438.0
+    },
+    {
+      "commune_code": "13132",
+      "commune_name": "Vitacura",
+      "region_name": "Metropolitana de Santiago",
+      "value": 3201.0
+    },
+    {
+      "commune_code": "13201",
+      "commune_name": "Puente Alto",
+      "region_name": "Metropolitana de Santiago",
+      "value": 26570.0
+    },
+    {
+      "commune_code": "13202",
+      "commune_name": "Pirque",
+      "region_name": "Metropolitana de Santiago",
+      "value": 1469.0
+    },
+    {
+      "commune_code": "13203",
+      "commune_name": "San José de Maipo",
+      "region_name": "Metropolitana de Santiago",
+      "value": 1209.0
+    },
+    {
+      "commune_code": "13301",
+      "commune_name": "Colina",
+      "region_name": "Metropolitana de Santiago",
+      "value": 8149.0
+    },
+    {
+      "commune_code": "13302",
+      "commune_name": "Lampa",
+      "region_name": "Metropolitana de Santiago",
+      "value": 6404.0
+    },
+    {
+      "commune_code": "13303",
+      "commune_name": "Tiltil",
+      "region_name": "Metropolitana de Santiago",
+      "value": 1184.0
+    },
+    {
+      "commune_code": "13401",
+      "commune_name": "San Bernardo",
+      "region_name": "Metropolitana de Santiago",
+      "value": 19195.0
+    },
+    {
+      "commune_code": "13402",
+      "commune_name": "Buin",
+      "region_name": "Metropolitana de Santiago",
+      "value": 5813.0
+    },
+    {
+      "commune_code": "13403",
+      "commune_name": "Calera de Tango",
+      "region_name": "Metropolitana de Santiago",
+      "value": 1526.0
+    },
+    {
+      "commune_code": "13404",
+      "commune_name": "Paine",
+      "region_name": "Metropolitana de Santiago",
+      "value": 4575.0
+    },
+    {
+      "commune_code": "13501",
+      "commune_name": "Melipilla",
+      "region_name": "Metropolitana de Santiago",
+      "value": 8347.0
+    },
+    {
+      "commune_code": "13502",
+      "commune_name": "Alhué",
+      "region_name": "Metropolitana de Santiago",
+      "value": 408.0
+    },
+    {
+      "commune_code": "13503",
+      "commune_name": "Curacaví",
+      "region_name": "Metropolitana de Santiago",
+      "value": 2010.0
+    },
+    {
+      "commune_code": "13504",
+      "commune_name": "María Pinto",
+      "region_name": "Metropolitana de Santiago",
+      "value": 617.0
+    },
+    {
+      "commune_code": "13505",
+      "commune_name": "San Pedro",
+      "region_name": "Metropolitana de Santiago",
+      "value": 621.0
+    },
+    {
+      "commune_code": "13601",
+      "commune_name": "Talagante",
+      "region_name": "Metropolitana de Santiago",
+      "value": 4425.0
+    },
+    {
+      "commune_code": "13602",
+      "commune_name": "El Monte",
+      "region_name": "Metropolitana de Santiago",
+      "value": 1852.0
+    },
+    {
+      "commune_code": "13603",
+      "commune_name": "Isla de Maipo",
+      "region_name": "Metropolitana de Santiago",
+      "value": 2207.0
+    },
+    {
+      "commune_code": "13604",
+      "commune_name": "Padre Hurtado",
+      "region_name": "Metropolitana de Santiago",
+      "value": 3503.0
+    },
+    {
+      "commune_code": "13605",
+      "commune_name": "Peñaflor",
+      "region_name": "Metropolitana de Santiago",
+      "value": 4972.0
+    },
+    {
+      "commune_code": "14101",
+      "commune_name": "Valdivia",
+      "region_name": "Los Ríos",
+      "value": 12833.0
+    },
+    {
+      "commune_code": "14102",
+      "commune_name": "Corral",
+      "region_name": "Los Ríos",
+      "value": 342.0
+    },
+    {
+      "commune_code": "14103",
+      "commune_name": "Lanco",
+      "region_name": "Los Ríos",
+      "value": 939.0
+    },
+    {
+      "commune_code": "14104",
+      "commune_name": "Los Lagos",
+      "region_name": "Los Ríos",
+      "value": 1465.0
+    },
+    {
+      "commune_code": "14105",
+      "commune_name": "Máfil",
+      "region_name": "Los Ríos",
+      "value": 518.0
+    },
+    {
+      "commune_code": "14106",
+      "commune_name": "Mariquina",
+      "region_name": "Los Ríos",
+      "value": 1650.0
+    },
+    {
+      "commune_code": "14107",
+      "commune_name": "Paillaco",
+      "region_name": "Los Ríos",
+      "value": 1183.0
+    },
+    {
+      "commune_code": "14108",
+      "commune_name": "Panguipulli",
+      "region_name": "Los Ríos",
+      "value": 2158.0
+    },
+    {
+      "commune_code": "14201",
+      "commune_name": "La Unión",
+      "region_name": "Los Ríos",
+      "value": 2429.0
+    },
+    {
+      "commune_code": "14202",
+      "commune_name": "Futrono",
+      "region_name": "Los Ríos",
+      "value": 1156.0
+    },
+    {
+      "commune_code": "14203",
+      "commune_name": "Lago Ranco",
+      "region_name": "Los Ríos",
+      "value": 727.0
+    },
+    {
+      "commune_code": "14204",
+      "commune_name": "Río Bueno",
+      "region_name": "Los Ríos",
+      "value": 1994.0
+    },
+    {
+      "commune_code": "15101",
+      "commune_name": "Arica",
+      "region_name": "Arica y Parinacota",
+      "value": 17712.0
+    },
+    {
+      "commune_code": "15102",
+      "commune_name": "Camarones",
+      "region_name": "Arica y Parinacota",
+      "value": 94.0
+    },
+    {
+      "commune_code": "15201",
+      "commune_name": "Putre",
+      "region_name": "Arica y Parinacota",
+      "value": 120.0
+    },
+    {
+      "commune_code": "15202",
+      "commune_name": "General Lagos",
+      "region_name": "Arica y Parinacota",
+      "value": 33.0
+    },
+    {
+      "commune_code": "16101",
+      "commune_name": "Chillán",
+      "region_name": "Ñuble",
+      "value": 10996.0
+    },
+    {
+      "commune_code": "16102",
+      "commune_name": "Bulnes",
+      "region_name": "Ñuble",
+      "value": 1305.0
+    },
+    {
+      "commune_code": "16103",
+      "commune_name": "Chillán Viejo",
+      "region_name": "Ñuble",
+      "value": 1756.0
+    },
+    {
+      "commune_code": "16104",
+      "commune_name": "El Carmen",
+      "region_name": "Ñuble",
+      "value": 474.0
+    },
+    {
+      "commune_code": "16105",
+      "commune_name": "Pemuco",
+      "region_name": "Ñuble",
+      "value": 406.0
+    },
+    {
+      "commune_code": "16106",
+      "commune_name": "Pinto",
+      "region_name": "Ñuble",
+      "value": 728.0
+    },
+    {
+      "commune_code": "16107",
+      "commune_name": "Quillón",
+      "region_name": "Ñuble",
+      "value": 1163.0
+    },
+    {
+      "commune_code": "16108",
+      "commune_name": "San Ignacio",
+      "region_name": "Ñuble",
+      "value": 692.0
+    },
+    {
+      "commune_code": "16109",
+      "commune_name": "Yungay",
+      "region_name": "Ñuble",
+      "value": 1014.0
+    },
+    {
+      "commune_code": "16201",
+      "commune_name": "Quirihue",
+      "region_name": "Ñuble",
+      "value": 467.0
+    },
+    {
+      "commune_code": "16202",
+      "commune_name": "Cobquecura",
+      "region_name": "Ñuble",
+      "value": 315.0
+    },
+    {
+      "commune_code": "16203",
+      "commune_name": "Coelemu",
+      "region_name": "Ñuble",
+      "value": 594.0
+    },
+    {
+      "commune_code": "16204",
+      "commune_name": "Ninhue",
+      "region_name": "Ñuble",
+      "value": 312.0
+    },
+    {
+      "commune_code": "16205",
+      "commune_name": "Portezuelo",
+      "region_name": "Ñuble",
+      "value": 148.0
+    },
+    {
+      "commune_code": "16206",
+      "commune_name": "Ranquil",
+      "region_name": "Ñuble",
+      "value": 299.0
+    },
+    {
+      "commune_code": "16207",
+      "commune_name": "Treguaco",
+      "region_name": "Ñuble",
+      "value": 314.0
+    },
+    {
+      "commune_code": "16301",
+      "commune_name": "San Carlos",
+      "region_name": "Ñuble",
+      "value": 2671.0
+    },
+    {
+      "commune_code": "16302",
+      "commune_name": "Coihueco",
+      "region_name": "Ñuble",
+      "value": 1426.0
+    },
+    {
+      "commune_code": "16303",
+      "commune_name": "Ñiquén",
+      "region_name": "Ñuble",
+      "value": 425.0
+    },
+    {
+      "commune_code": "16304",
+      "commune_name": "San Fabián",
+      "region_name": "Ñuble",
+      "value": 272.0
+    },
+    {
+      "commune_code": "16305",
+      "commune_name": "San Nicolás",
+      "region_name": "Ñuble",
+      "value": 879.0
+    }
+  ],
+  "note": "Referencia independiente calculada desde el backbone CEAD validado. Incivilidades y Otros delitos o faltas están marcados incompletos porque el bridge histórico excluye componentes; no se usan para rechazar un mirror más completo."
+}
