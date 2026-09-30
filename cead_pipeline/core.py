@@ -8,10 +8,22 @@ import os
 import pandas as pd
 
 from .bridge import fetch_snapshot, normalize, annualize
-from .primary import collect_direct_year, probe
+from .primary import collect_direct_year, load_catalog, probe
 
-VERSION = "0.3.0"
+VERSION = "0.3.1-exp"
 WEEKLY_CRON_UTC = "20 12 * * 1"
+
+# Familias especialmente relevantes para ampliar la explotación territorial
+# del IGR. Este listado es diagnóstico: no modifica ponderaciones ni salidas
+# consumidas hoy por Radar Delictual / Atlas.
+IGR_PRIORITY_CATEGORIES = {
+    "Tráfico de sustancias",
+    "Microtráfico de sustancias",
+    "Elaboración o producción de sustancias",
+    "Porte / posesión de armas o explosivos",
+    "Comercio ilegal",
+    "Abigeato",
+}
 
 
 def _load_json(path: Path, default):
@@ -19,6 +31,40 @@ def _load_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
     except Exception:
         return default
+
+
+def _catalog_labels(catalog: dict) -> set[str]:
+    """Devuelve todas las etiquetas publicadas por el catálogo técnico CEAD."""
+    labels: set[str] = set()
+    for level in ("families", "groups", "subgroups"):
+        labels.update(str(value) for value in (catalog.get(level) or {}).values() if value)
+    return labels
+
+
+def _catalog_coverage_diagnostic(monthly: pd.DataFrame, catalog: dict) -> dict:
+    """Compara el espejo canónico con el catálogo CEAD completo.
+
+    Es deliberadamente informativo. Una categoría ausente en el espejo no se
+    interpreta como cero ni altera el dataset canónico.
+    """
+    observed = set(monthly["crime_category"].dropna().astype(str)) if not monthly.empty else set()
+    configured = _catalog_labels(catalog)
+    priority = sorted(IGR_PRIORITY_CATEGORIES)
+    return {
+        "configured_categories": len(configured),
+        "observed_categories": len(observed),
+        "observed": sorted(observed),
+        "missing_from_canonical_bridge": sorted(configured - observed),
+        "priority_igr": [
+            {
+                "category": category,
+                "observed_in_canonical_bridge": category in observed,
+                "eligible_for_direct_probe": category in configured,
+            }
+            for category in priority
+        ],
+        "rule": "missing_never_zero; diagnóstico no modifica IGR ni el backbone canónico",
+    }
 
 
 def _freshness(latest_period: str | None, now: datetime | None = None) -> dict:
@@ -79,12 +125,14 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
     previous = _load_json(previous_path, {})
     official_controls = _load_json(root / "config" / "cead_2026_official_controls.json", {})
     source_registry = _load_json(root / "config" / "source_registry_v03.json", {})
+    catalog = load_catalog()
 
     content, meta = fetch_snapshot()
     monthly, stats = normalize(content, start_year)
     if stats["communes"] < 340 or stats["max_date"] < "2025-12-01":
         raise ValueError(f"CEAD QA failed: {stats}")
     annual = annualize(monthly)
+    catalog_diag = _catalog_coverage_diagnostic(monthly, catalog)
 
     primary = probe()
     direct_path = out / "cead_direct_monthly.parquet"
@@ -94,7 +142,12 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
 
     if primary.get("ok"):
         communes = monthly[["commune_code", "commune_name", "region_code", "region_name"]].drop_duplicates().to_dict("records")
-        allowed = set(monthly["crime_category"].dropna().astype(str))
+        # Antes este filtro dependía de las categorías visibles en el espejo.
+        # Eso impedía recuperar subgrupos válidos del catálogo CEAD que el
+        # espejo no publica (p.ej. tráfico/microtráfico, comercio ilegal o
+        # abigeato). El directo queda ahora habilitado para todo el catálogo,
+        # pero continúa aislado del cead_annual.parquet canónico.
+        allowed = _catalog_labels(catalog)
         direct_rows, direct_meta = collect_direct_year(now.year, communes, allowed)
         new_direct = pd.DataFrame(direct_rows)
         if direct_meta.get("usable") and not new_direct.empty:
@@ -109,6 +162,9 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
         _annualize_direct(direct, now).to_parquet(out / "cead_direct_annual_ytd.parquet", index=False)
     best_monthly = _best_monthly(monthly, direct)
 
+    # IMPORTANTE: estas salidas canónicas no cambian su semántica. En
+    # particular cead_annual.parquet sigue proveniendo del espejo comparable,
+    # que es el archivo consumido actualmente por Radar Delictual.
     monthly.to_parquet(out / "cead_monthly.parquet", index=False)
     annual.to_parquet(out / "cead_annual.parquet", index=False)
     best_monthly.to_parquet(out / "cead_monthly_best.parquet", index=False)
@@ -139,6 +195,11 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
         "freshness": freshness,
         "primary_probe": primary,
         "direct_current_year": direct_meta,
+        "catalog_exploitation": {
+            "artifact": "data/processed/cead_catalog_coverage.json",
+            "canonical_igr_impact": "none",
+            "priority_igr": catalog_diag["priority_igr"],
+        },
         "bridge_snapshot": {**meta, **stats},
         "official_2026_controls": {
             "available": bool(official_controls),
@@ -161,15 +222,16 @@ def run_pipeline(start_year: int = 2020, root: str = "."):
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "direct_probe.json").write_text(json.dumps(primary, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "direct_collection.json").write_text(json.dumps(direct_meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "cead_catalog_coverage.json").write_text(json.dumps(catalog_diag, ensure_ascii=False, indent=2), encoding="utf-8")
     monthly[["commune_code", "commune_name", "region_code", "region_name"]].drop_duplicates().to_json(out / "communes.json", orient="records", force_ascii=False, indent=2)
     monthly[["crime_category", "crime_category_norm"]].drop_duplicates().to_json(out / "catalog_observed.json", orient="records", force_ascii=False, indent=2)
 
     evidence_rows = [meta, primary, {"source_id": "cead_direct_collection", **direct_meta, "retrieved_at": now.isoformat()}]
     (ev / "source_evidence.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in evidence_rows), encoding="utf-8")
 
-    history_entry = {"version": VERSION, "run_date": now.strftime("%Y-%m-%d"), "generated_at": now.isoformat(), "run_event": os.getenv("GITHUB_EVENT_NAME", "local"), "changed_vs_previous": changed, "bridge_sha256": bridge_hash, "bridge_max_date": stats.get("max_date"), "best_latest_period": best_latest, "freshness": freshness, "primary_probe_ok": bool(primary.get("ok")), "direct_usable": bool(direct_meta.get("usable")), "official_2026_controls": manifest["official_2026_controls"], "coverage": manifest["coverage"]}
+    history_entry = {"version": VERSION, "run_date": now.strftime("%Y-%m-%d"), "generated_at": now.isoformat(), "run_event": os.getenv("GITHUB_EVENT_NAME", "local"), "changed_vs_previous": changed, "bridge_sha256": bridge_hash, "bridge_max_date": stats.get("max_date"), "best_latest_period": best_latest, "freshness": freshness, "primary_probe_ok": bool(primary.get("ok")), "direct_usable": bool(direct_meta.get("usable")), "catalog_exploitation": manifest["catalog_exploitation"], "official_2026_controls": manifest["official_2026_controls"], "coverage": manifest["coverage"]}
     (history / f"{now.strftime('%Y-%m-%d')}.json").write_text(json.dumps(history_entry, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    (pub / "data.json").write_text(json.dumps({"version": VERSION, "generated_at": manifest["generated_at"], "coverage": manifest["coverage"], "freshness": freshness, "official_2026_controls": manifest["official_2026_controls"], "source_change": manifest["source_change"]}, ensure_ascii=False, indent=2), encoding="utf-8")
-    (pub / "index.html").write_text("<h1>CEAD Data Pipeline v0.3</h1><p>Dataset técnico comunal independiente del análisis AML. Revisión semanal y controles oficiales 2026 separados del histórico comparable.</p>", encoding="utf-8")
+    (pub / "data.json").write_text(json.dumps({"version": VERSION, "generated_at": manifest["generated_at"], "coverage": manifest["coverage"], "freshness": freshness, "official_2026_controls": manifest["official_2026_controls"], "source_change": manifest["source_change"], "catalog_exploitation": manifest["catalog_exploitation"]}, ensure_ascii=False, indent=2), encoding="utf-8")
+    (pub / "index.html").write_text("<h1>CEAD Data Pipeline v0.3.1-exp</h1><p>Dataset técnico comunal independiente del análisis AML. La explotación ampliada del catálogo se mantiene separada del backbone canónico y no modifica el IGR productivo.</p>", encoding="utf-8")
     return manifest

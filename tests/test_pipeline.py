@@ -1,8 +1,10 @@
 from datetime import datetime, timezone
 from pathlib import Path
 
-from cead_pipeline.core import _freshness
-from cead_pipeline.primary import full_catalog_payload, parse_cead_html, probe_payload
+import pandas as pd
+
+from cead_pipeline.core import _catalog_coverage_diagnostic, _catalog_labels, _freshness
+from cead_pipeline.primary import full_catalog_payload, load_catalog, parse_cead_html, probe_payload
 
 
 def test_probe_payload():
@@ -18,6 +20,28 @@ def test_full_catalog_payload_is_neutral_and_complete():
     assert ("grupo[]", "401") in payload
     assert ("subgrupo[]", "40101") in payload
     assert ("subgrupo[]", "60501") in payload
+
+
+def test_catalog_labels_include_igr_priorities():
+    labels = _catalog_labels(load_catalog())
+    for category in (
+        "Tráfico de sustancias",
+        "Microtráfico de sustancias",
+        "Elaboración o producción de sustancias",
+        "Porte / posesión de armas o explosivos",
+        "Comercio ilegal",
+        "Abigeato",
+    ):
+        assert category in labels
+
+
+def test_catalog_coverage_diagnostic_does_not_treat_missing_as_zero():
+    monthly = pd.DataFrame({"crime_category": ["Receptación", "Delitos asociados a drogas"]})
+    diag = _catalog_coverage_diagnostic(monthly, load_catalog())
+    priority = {row["category"]: row for row in diag["priority_igr"]}
+    assert priority["Tráfico de sustancias"]["observed_in_canonical_bridge"] is False
+    assert priority["Tráfico de sustancias"]["eligible_for_direct_probe"] is True
+    assert "missing_never_zero" in diag["rule"]
 
 
 def test_parser_reads_months():
