@@ -1,0 +1,18 @@
+{
+  "version": "0.3.0",
+  "source_id": "cead_official_t1_2026_publication",
+  "source_tier": "official_secondary_control",
+  "period": "2026-Q1",
+  "period_end": "2026-03-31",
+  "published_at": "2026-05-14",
+  "source_url": "https://subprevenciondeldelito.gob.cl/noticia/los-robos-violentos-caen-un-13-en-el-pais-e-ilicitos-contra-las-personas-registran-cifras-a-la-baja-durante-el-primer-trimestre-de-2026/",
+  "controls": [
+    {"scope": "national", "metric": "yoy_pct", "crime": "Delitos asociados a drogas", "value": 10.8},
+    {"scope": "national", "metric": "yoy_pct", "crime": "Microtráfico", "value": 13.7},
+    {"scope": "national", "metric": "yoy_pct", "crime": "Delitos asociados a armas", "value": 15.7},
+    {"scope": "region", "region": "Tarapacá", "metric": "cases_q1", "crime": "Delitos asociados a drogas", "value_2025": 126, "value_2026": 202},
+    {"scope": "region", "region": "Atacama", "metric": "cases_q1", "crime": "Delitos asociados a drogas", "value_2025": 119, "value_2026": 159},
+    {"scope": "region", "region": "Magallanes y de la Antártica Chilena", "metric": "cases_q1", "crime": "Delitos asociados a drogas", "value_2025": 44, "value_2026": 58}
+  ],
+  "note": "Controles agregados oficiales para validar fuentes CEAD 2026. No completan datos comunales ni mensuales faltantes."
+}

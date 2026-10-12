@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "principles": {
+    "core_cadence": "weekly",
+    "cron_utc": "20 12 * * 1",
+    "missing_never_zero": true,
+    "partial_never_replaces_last_good": true,
+    "aml_core_isolated_from_context_layers": true
+  },
+  "dimensions": [
+    {
+      "id": "casos_policiales_frecuencia",
+      "label": "Casos policiales · frecuencia",
+      "layer": "core",
+      "priority": 1,
+      "status": "active",
+      "refresh": "weekly",
+      "score_eligible": true
+    },
+    {
+      "id": "denuncias_frecuencia",
+      "label": "Denuncias · frecuencia",
+      "layer": "police_enrichment",
+      "priority": 1,
+      "status": "acquisition_ready_pending_primary",
+      "refresh": "weekly",
+      "score_eligible": false
+    },
+    {
+      "id": "detenciones_frecuencia",
+      "label": "Detenciones · frecuencia",
+      "layer": "police_enrichment",
+      "priority": 1,
+      "status": "acquisition_ready_pending_primary",
+      "refresh": "weekly",
+      "score_eligible": false
+    },
+    {
+      "id": "aprehendidos_frecuencia",
+      "label": "Aprehendidos · frecuencia",
+      "layer": "police_enrichment",
+      "priority": 1,
+      "status": "acquisition_ready_pending_primary",
+      "refresh": "weekly",
+      "score_eligible": false
+    },
+    {
+      "id": "tasas_100k",
+      "label": "Tasas por 100.000 habitantes",
+      "layer": "police_enrichment",
+      "priority": 1,
+      "status": "acquisition_ready_pending_primary",
+      "refresh": "weekly",
+      "score_eligible": true
+    },
+    {
+      "id": "ley_20000_procedimientos",
+      "label": "Procedimientos policiales Ley 20.000",
+      "layer": "drug_procedures",
+      "priority": 1,
+      "status": "source_discovery",
+      "refresh": "weekly",
+      "score_eligible": true
+    },
+    {
+      "id": "sexo_edad",
+      "label": "Sexo y edad de víctimas/victimarios",
+      "layer": "demographic_context",
+      "priority": 2,
+      "status": "source_discovery",
+      "refresh": "weekly",
+      "score_eligible": false
+    },
+    {
+      "id": "enusc",
+      "label": "ENUSC · victimización, denuncia y percepción",
+      "layer": "survey_context",
+      "priority": 2,
+      "status": "source_discovery",
+      "refresh": "weekly_discovery",
+      "score_eligible": false
+    },
+    {
+      "id": "historico_pre2020",
+      "label": "Serie histórica CEAD pre-2020",
+      "layer": "long_term_history",
+      "priority": 3,
+      "status": "backfill_planned",
+      "refresh": "immutable_backfill_plus_weekly_discovery",
+      "score_eligible": false
+    }
+  ]
+}
