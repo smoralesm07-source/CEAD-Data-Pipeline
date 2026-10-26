@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "run_month": "2026-08",
+  "generated_at": "2026-08-13T17:59:09.765420+00:00",
+  "run_event": "push",
+  "changed_vs_previous": false,
+  "bridge_sha256": "e8632f59403fb59c1b1e1d7989ea1a59652b3df4562bd56ddc08c6417fa7c042",
+  "bridge_max_date": "2025-12-01",
+  "best_latest_period": "2025-12",
+  "freshness": {
+    "latest_period": "2025-12",
+    "months_lag": 8,
+    "status": "stale"
+  },
+  "primary_probe_ok": false,
+  "direct_usable": false,
+  "coverage": {
+    "min_date": "2020-01-01",
+    "max_date": "2025-12-01",
+    "communes": 345,
+    "expected_communes": 346,
+    "offenses": 30,
+    "monthly_rows": 745200,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "annual_rows": 62100,
+    "best_monthly_rows": 745200,
+    "best_latest_period": "2025-12",
+    "direct_monthly_rows": 0
+  }
+}
