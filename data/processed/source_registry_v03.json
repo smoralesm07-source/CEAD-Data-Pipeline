@@ -1,0 +1,40 @@
+{
+  "version": "0.3.1",
+  "sources": [
+    {
+      "source_id": "cead_direct_post",
+      "tier": "primary_direct",
+      "role": "backbone_preferred",
+      "update_target": "monthly_or_better",
+      "status_rule": "promote_only_if_probe_and_QA_pass"
+    },
+    {
+      "source_id": "cead_bastianolea_bridge",
+      "tier": "mirror_of_primary",
+      "role": "historical_backbone",
+      "known_coverage_through": "2025-12"
+    },
+    {
+      "source_id": "cead_twun_2026",
+      "tier": "validated_mirror_of_primary",
+      "role": "2026_ytd_validated",
+      "coverage_validated": "345 communes; 8 CEAD families; annual series 2005-2026; 2026 partial",
+      "validated_at": "2026-08-13",
+      "validation_rule": "Artifact schema passed and six reconstructable CEAD families passed historical overlap gates for 2020-2025: territorial join >=99%, exact equality >=95%, relative aggregate difference <=1%.",
+      "period_completeness": "ytd_unknown_cutoff",
+      "consumer_rule": "Use as a separate annual/YTD 2026 layer. Never splice into the canonical monthly CEAD series and never treat 2026 as a complete year until the exact cutoff is documented."
+    },
+    {
+      "source_id": "stop_carabineros",
+      "tier": "auxiliary_leading_indicator",
+      "role": "fresh_operational_signal",
+      "consumer_rule": "Keep separate from CEAD; never use STOP to fill CEAD missing periods"
+    },
+    {
+      "source_id": "cead_official_t1_2026_publication",
+      "tier": "official_secondary_control",
+      "role": "2026_validation_control",
+      "period": "2026-Q1"
+    }
+  ]
+}
